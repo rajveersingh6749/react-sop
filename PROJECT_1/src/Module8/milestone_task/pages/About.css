@@ -1,0 +1,23 @@
+.about {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.user_list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  list-style: none;
+}
+
+/* .user_list p {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.user_list p b {
+  font-size: 18px;
+} */

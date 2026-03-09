@@ -1,0 +1,11 @@
+.user_data {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 20px;
+}
+
+.user_data button {
+    margin-top: 20px;
+    width: fit-content;
+}

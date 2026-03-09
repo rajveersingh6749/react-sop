@@ -1,0 +1,9 @@
+.first {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, button {
+    padding: 6px 10px;
+}

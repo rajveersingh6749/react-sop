@@ -1,0 +1,15 @@
+.light {
+    background-color: white;
+    color: black;
+}
+
+.dark {
+    background-color: black;
+    color: rgb(92, 77, 77);
+}
+
+.top_level {
+    border: 1px solid gray;
+    padding: 10px;
+    background-color: teal;
+}

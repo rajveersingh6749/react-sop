@@ -1,0 +1,13 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: transparent;
+  border: none;
+  color: white;
+}
+
+.home_link {
+  color: white;
+  font-size: 20px;
+}

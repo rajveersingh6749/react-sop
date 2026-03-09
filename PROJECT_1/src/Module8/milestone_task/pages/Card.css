@@ -1,0 +1,23 @@
+.card_container {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.user_container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.user_list {
+  list-style: none;
+}
+
+.back_btn {
+  width: fit-content;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 10px;
+}

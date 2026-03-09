@@ -1,0 +1,7 @@
+.student_links {
+    color: white;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

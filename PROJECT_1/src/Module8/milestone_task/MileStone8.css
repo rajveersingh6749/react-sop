@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.custom_container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+body {
+  background-color: rgb(56, 54, 54);
+  min-height: 100vh;
+  color: white;
+}
+
+.nav1_container {
+  background-color: rgb(128, 29, 221);
+  position: sticky;
+  top: 0;
+}
+
+.route1_container {
+  min-height: 100vh;
+}
+
+.nav_bar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 15px 0;
+  gap: 20px;
+}

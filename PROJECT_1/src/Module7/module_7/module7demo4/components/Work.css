@@ -1,0 +1,12 @@
+.work {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.work ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+}

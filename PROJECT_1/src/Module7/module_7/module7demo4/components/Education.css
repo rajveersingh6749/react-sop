@@ -1,0 +1,9 @@
+.education {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.education b {
+  font-size: 20px;
+}

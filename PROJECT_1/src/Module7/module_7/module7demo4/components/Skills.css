@@ -1,0 +1,12 @@
+.skills {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skills ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+}
