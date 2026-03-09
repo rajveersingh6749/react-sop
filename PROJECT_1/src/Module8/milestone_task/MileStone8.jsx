@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Card from './pages/Card'
 import NotFound from './pages/NotFound'
+import { Suspense } from 'react'
 
 export default function MileStone8() {
   return (
@@ -24,7 +25,14 @@ export default function MileStone8() {
       <div className='custom_container'>
         <div className='route1_container'>
           <Routes>
-            <Route index element={<Home />} />
+            <Route
+              index
+              element={
+                <Suspense fallback={<div>Loading...</div>}>
+                  <Home />
+                </Suspense>
+              }
+            />
             <Route path='about' element={<About />} />
             <Route path='user/:id' element={<Card />} />
             <Route path='*' element={<NotFound />} />

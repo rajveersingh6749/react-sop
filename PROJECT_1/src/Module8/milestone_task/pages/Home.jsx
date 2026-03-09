@@ -58,6 +58,8 @@ const Home = () => {
     return <p>loading...</p>
   }
 
+  console.log("Results", results)
+
   return (
     <div className='card'>
       <h1>List of Users:</h1>
