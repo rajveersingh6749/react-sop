@@ -27,7 +27,7 @@ export default function Home() {
 
       return response.json()
     } catch (error) {
-      throw new Error('Failed to fetch data!', error.message)
+      throw new Error(error.message)
     }
   }
 

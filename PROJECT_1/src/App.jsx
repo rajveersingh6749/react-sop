@@ -28,6 +28,8 @@ import { useState } from 'react'
 import Login from './Module8/Login'
 import ProtectedRoute from './Module8/ProtectedRoute'
 import MileStone8 from './Module8/milestone_task/MileStone8.jsx'
+import Transition from './Module8/start_transition/Transition.jsx'
+import Module9demo1 from './Module9/module_9/Module9demo1/ReactMemo.jsx'
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -111,7 +113,13 @@ function App() {
                 Module 8
               </Link>
               <Link to='/milestone8' className='nav_link3'>
-                Milestone Task 
+                Milestone Task
+              </Link>
+              <Link to='/transition' className='nav_link3'>
+                startTransition
+              </Link>
+              <Link to='/module9demo1' className='nav_link3'>
+                Module9demo1 ReactMemo
               </Link>
             </nav>
           </div>
@@ -189,6 +197,9 @@ function App() {
                 />
 
                 <Route path='/milestone8/*' element={<MileStone8 />} />
+                <Route path='/transition' element={<Transition />} />
+
+                <Route path='/module9demo1' element={<Module9demo1 />} />
 
                 <Route path='*' element={<NotFound />} />
               </Routes>

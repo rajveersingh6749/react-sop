@@ -4,7 +4,6 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Card from './pages/Card'
 import NotFound from './pages/NotFound'
-import { Suspense } from 'react'
 
 export default function MileStone8() {
   return (
