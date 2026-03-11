@@ -1,18 +1,9 @@
-'use client'
+// 'use client'
 import { Link } from 'react-router-dom'
 import './Home.css'
 // import { useEffect, useState } from 'react'
 import { use } from 'react'
-// import { getData } from './fetchData'
-
-const usersPromise = fetch('https://jsonplaceholder.typicode.com/users').then(
-  (response) => {
-    if (!response.ok) {
-      throw new Error('Failed to fetch data!')
-    }
-    return response.json()
-  },
-)
+import { usersPromise } from './fetchData'
 
 const Home = () => {
   // const [isLoading, setIsLoading] = useState(true)
@@ -54,25 +45,21 @@ const Home = () => {
   // console.log('Data: ', results)
 
   const results = use(usersPromise)
-  if (!results) {
-    return <p>loading...</p>
-  }
 
-  console.log("Results", results)
+  console.log('Home: ', results)
 
   return (
     <div className='card'>
       <h1>List of Users:</h1>
-      {results &&
-        results.map((user) => (
-          <ul key={user.id} className='user_list'>
-            <li>
-              <Link to={`/milestone8/user/${user.id}`} className='home_link'>
-                {user.name}
-              </Link>
-            </li>
-          </ul>
+      <ul className='user_list'>
+        {results.map((user) => (
+          <li key={user.id}>
+            <Link to={`/milestone8/user/${user.id}`} className='home_link'>
+              {user.name}
+            </Link>
+          </li>
         ))}
+      </ul>
     </div>
   )
 }

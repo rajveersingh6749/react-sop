@@ -16,5 +16,6 @@
   "eslint.rules.customizations": [
     { "rule": "react/jsx-uses-react", "severity": "off" },
     { "rule": "react/react-in-jsx-scope", "severity": "off" }
-  ]
+  ],
+  "snyk.advanced.organization": "02fc1e96-ec5e-4f99-90b0-94ed2745340b"
 }

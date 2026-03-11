@@ -25,14 +25,7 @@ export default function MileStone8() {
       <div className='custom_container'>
         <div className='route1_container'>
           <Routes>
-            <Route
-              index
-              element={
-                <Suspense fallback={<div>Loading...</div>}>
-                  <Home />
-                </Suspense>
-              }
-            />
+            <Route index element={<Home />} />
             <Route path='about' element={<About />} />
             <Route path='user/:id' element={<Card />} />
             <Route path='*' element={<NotFound />} />
