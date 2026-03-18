@@ -48,61 +48,61 @@ function App() {
                 Home
               </Link>
               <Link to='/module1' className='nav_link3'>
-                Module 1
+                Module 1 Props
               </Link>
               <Link to='/milestone1' className='nav_link3'>
-                Milestone Task 1
+                Milestone Task 1 Product Card
               </Link>
               <Link to='/module2' className='nav_link3'>
-                Module 2
+                Module 2 State and Events
               </Link>
               <Link to='/milestone2' className='nav_link3'>
-                Milestone Task 2
+                Milestone Task 2 Counter App
               </Link>
               <Link to='/module3' className='nav_link3'>
-                Module 3
+                Module 3 Effects and Side Effects
               </Link>
               <Link to='/milestone3' className='nav_link3'>
-                Milestone Task 3
+                Milestone Task 3 Timer Components
               </Link>
               <Link to='/module4' className='nav_link3'>
-                Module 4
+                Module 4 Custom Hooks and Reusability
               </Link>
               <Link to='/milestone4' className='nav_link3'>
-                Milestone Task 4
+                Milestone Task 4 useLocalStorage(Reusable Hook)
               </Link>
               <Link to='/module5' className='nav_link3'>
-                Module 5
+                Module 5 Component Composition, Children and Render Props
               </Link>
               <Link to='/milestone5' className='nav_link3'>
-                Milestone Task 5
+                Milestone Task 5 Modal Component
               </Link>
               <Link to='/module6demo1' className='nav_link3'>
-                Module6demo1
+                Module6demo1 Prop Drilling(Problem)
               </Link>
               <Link to='/module6demo2' className='nav_link3'>
-                Module6demo2
+                Module6demo2 Context Provider
               </Link>
               <Link to='/module6demo3' className='nav_link3'>
-                Module6demo3
+                Module6demo3 useMemo and useCallback(Preview)
               </Link>
               <Link to='/milestone6' className='nav_link3'>
-                Milestone Task 6
+                Milestone Task 6 Theme Management
               </Link>
               <Link to='/module7demo1' className='nav_link3'>
-                Module7demo1
+                Module7demo1 Browser Router
               </Link>
               <Link to='/module7demo2' className='nav_link3'>
-                Module7demo2
+                Module7demo2 Dynamic Routing
               </Link>
               <Link to='/module7demo3' className='nav_link3'>
-                Module7demo3
+                Module7demo3 Nested Routes
               </Link>
               <Link to='/module7demo4' className='nav_link3'>
-                Module7demo4
+                Module7demo4 Programmatic Navigation
               </Link>
               <Link to='/milestone7' className='nav_link3'>
-                Milestone Task 7
+                Milestone Task 7 3-Page App
               </Link>
               {/* <Link to='/module8demo1' className='nav_link3'>
                 Module8demo1 Axios
@@ -114,13 +114,13 @@ function App() {
                 Module8demo3 use hook
               </Link> */}
               <Link to='/module8' className='nav_link3'>
-                Module 8
+                Module 8 Data Fetching and Async Patterns
               </Link>
               <Link to='/milestone8' className='nav_link3'>
-                Milestone Task
+                Module 8 Milestone Task use() API
               </Link>
               <Link to='/transition' className='nav_link3'>
-                startTransition
+                Module 8 Bonus: startTransition()
               </Link>
               <Link to='/module9demo1' className='nav_link3'>
                 Module9demo1 ReactMemo

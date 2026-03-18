@@ -31,17 +31,17 @@ function Login({ isLoggedIn, setIsLoggedIn }) {
         <hr />
 
         <Link to='/module8/module8demo1' className='nav_link3'>
-          Module8demo1
+          Module8demo1 Axios
         </Link>
         <br />
 
         <Link to='/module8/module8demo2' className='nav_link3'>
-          Module8demo2
+          Module8demo2 Fetch, Loading States and Error States
         </Link>
         <br />
 
         <Link to='/module8/module8demo3' className='nav_link3'>
-          Module8demo3
+          Module8demo3 The use() Hook
         </Link>
 
         <br />
