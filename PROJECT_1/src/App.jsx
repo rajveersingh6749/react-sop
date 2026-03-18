@@ -30,6 +30,10 @@ import ProtectedRoute from './Module8/ProtectedRoute'
 import MileStone8 from './Module8/milestone_task/MileStone8.jsx'
 import Transition from './Module8/start_transition/Transition.jsx'
 import Module9demo1 from './Module9/module_9/Module9demo1/ReactMemo.jsx'
+import Module9demo2 from './Module9/module_9/Module9demo2/UseMemo.jsx'
+import Module9demo3 from './Module9/module_9/Module9demo3/UseMemo.jsx'
+import Module9demo4 from './Module9/module_9/Module9demo4/UseCallback.jsx'
+import Module9demo5 from './Module9/module_9/Module9demo5/UseCallback.jsx'
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -121,6 +125,18 @@ function App() {
               <Link to='/module9demo1' className='nav_link3'>
                 Module9demo1 ReactMemo
               </Link>
+              <Link to='/module9demo2' className='nav_link3'>
+                Module9demo2 requirement of useMemo
+              </Link>
+              <Link to='/module9demo3' className='nav_link3'>
+                Module9demo3 useMemo
+              </Link>
+              <Link to='/module9demo4' className='nav_link3'>
+                Module9demo4 requirement of useCallback
+              </Link>
+              <Link to='/module9demo5' className='nav_link3'>
+                Module9demo5 useCallback
+              </Link>
             </nav>
           </div>
 
@@ -200,6 +216,10 @@ function App() {
                 <Route path='/transition' element={<Transition />} />
 
                 <Route path='/module9demo1' element={<Module9demo1 />} />
+                <Route path='/module9demo2' element={<Module9demo2 />} />
+                <Route path='/module9demo3' element={<Module9demo3 />} />
+                <Route path='/module9demo4' element={<Module9demo4 />} />
+                <Route path='/module9demo5' element={<Module9demo5 />} />
 
                 <Route path='*' element={<NotFound />} />
               </Routes>

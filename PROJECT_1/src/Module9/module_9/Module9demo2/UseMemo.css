@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  background-color: green;
+  padding: 6px 10px;
+  text-align: center;
+}
+
+.controls {
+  margin: 10px 0;
+  display: flex;
+  gap: 5px;
+}
+
+.product_list {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.product_list span {
+  font-size: 18px;
+}
+
+.product_details {
+  border: 1px solid gray;
+}
+
+.filter_bar {
+  display: flex;
+  flex-direction: column;
+}
+
+.total_price {
+  margin: 10px 0;
+  background-color: antiquewhite;
+  width: fit-content;
+  padding: 6px 10px;
+  color: black;
+  border: none;
+  border-radius: 10px;
+}

@@ -15,17 +15,38 @@ const ReactMemo = () => {
   ])
 
   const [text, setText] = useState('')
+  const [editId, setEditId] = useState(null)
 
   const handleChange = (e) => {
     setText(e.target.value)
   }
 
-  const addTodo = () => {
-    const lastId = todo[todo.length - 1].id
-    if(text === '') return null
-    let newTodo = { id: lastId + 1, title: text }
-    setTodo([...todo, newTodo])
+  const addOrUpdateTodo = () => {
+    if (text === '') return
+
+    if (editId !== null) {
+      const updatedTodo = todo.map((item) =>
+        item.id === editId ? { ...item, title: text } : item,
+      )
+      setTodo(updatedTodo)
+      setEditId(null)
+    } else {
+      const lastId = todo[todo.length - 1].id || 0
+      let newTodo = { id: lastId + 1, title: text }
+      setTodo([...todo, newTodo])
+    }
     setText('')
+  }
+
+  const deleteTodo = (id) => {
+    const updatedTodos = todo.filter((item) => item.id !== id)
+    setTodo(updatedTodos)
+  }
+
+  const editTodo = (id) => {
+    const selectedTodo = todo.find((item) => item.id === id)
+    setText(selectedTodo.title)
+    setEditId(id)
   }
 
   console.log(todo)
@@ -39,10 +60,10 @@ const ReactMemo = () => {
         onChange={handleChange}
         placeholder='Add Todo...'
       />
-      <button type='button' onClick={addTodo}>
-        Add Todo
+      <button type='button' onClick={addOrUpdateTodo}>
+        {editId ? 'Update Todo' : 'Add Todo'}
       </button>
-      <Todo todos={todo} />
+      <Todo todos={todo} editTodo={editTodo} deleteTodo={deleteTodo} />
     </div>
   )
 }

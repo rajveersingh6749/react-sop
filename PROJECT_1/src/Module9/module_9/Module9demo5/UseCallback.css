@@ -1,0 +1,14 @@
+h1 {
+  background-color: green;
+  padding: 6px 10px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+h2 {
+  background-color: aqua;
+  padding: 4px 8px;
+  color: black;
+  width: fit-content;
+  margin: 10px 0;
+}
