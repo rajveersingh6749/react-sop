@@ -34,6 +34,21 @@ import Module9demo2 from './Module9/module_9/Module9demo2/UseMemo.jsx'
 import Module9demo3 from './Module9/module_9/Module9demo3/UseMemo.jsx'
 import Module9demo4 from './Module9/module_9/Module9demo4/UseCallback.jsx'
 import Module9demo5 from './Module9/module_9/Module9demo5/UseCallback.jsx'
+import Module9demo6 from './Module9/module_9/Module9demo6/RenderList.jsx'
+import Module9demo7 from './Module9/module_9/Module9demo7/ListVirtualization.jsx'
+import Module9demo8 from './Module9/module_9/Module9demo8/AutoMemo.jsx'
+import MileStone9demo1 from './Module9/milestone_task/Demo1/MilestoneTask9demo1.jsx'
+import MileStone9demo2 from './Module9/milestone_task/Demo2/MilestoneTask9demo2.jsx'
+import MileStone9demo3 from './Module9/milestone_task/Demo3/MilestoneTask9demo3.jsx'
+import Module10demo1 from './Module10/module_10/module10demo1/UnitTesting.jsx'
+import ControlledCompo from './Addi1/ControlledCompo.jsx'
+import UncontrolledCompo from './Addi1/UncontrolledCompo.jsx'
+import Count from './Addi1/UncontrolledCount.jsx'
+import ControlledCompoForm from './Addi1/ControlledCompoForm.jsx'
+import ReactHelmet from './Addi1/ReactHelmet.jsx'
+import ReactH from './Addi1/ReactHelmet/ReactH.jsx'
+import PropCompo from './Addi1/Prop_Types/PropCompo.jsx'
+import Temp from './Addi1/Prop_Types/temp.jsx'
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -137,6 +152,51 @@ function App() {
               <Link to='/module9demo5' className='nav_link3'>
                 Module9demo5 useCallback
               </Link>
+              <Link to='/module9demo6' className='nav_link3'>
+                Module9demo6 Render Large List(Problem)
+              </Link>
+              <Link to='/module9demo7' className='nav_link3'>
+                Module9demo7 List Virtualization
+              </Link>
+              <Link to='/module9demo8' className='nav_link3'>
+                Module9demo8 Automatic Memoization
+              </Link>
+              <Link to='/milestone9demo1' className='nav_link3'>
+                Milestone Task 9 Without Optimization
+              </Link>
+              <Link to='/milestone9demo2' className='nav_link3'>
+                Milestone Task 9 With React.memo
+              </Link>
+              <Link to='/milestone9demo3' className='nav_link3'>
+                Milestone Task 9 with React 19 Compiler
+              </Link>
+              <Link to='/module10demo1' className='nav_link3'>
+                Module10demo1 Unit Testing
+              </Link>
+              <Link to='/controlled' className='nav_link3'>
+                Controlled Component
+              </Link>
+              <Link to='/uncontrolled' className='nav_link3'>
+                Uncontrolled Component
+              </Link>
+              <Link to='/count' className='nav_link3'>
+                Uncontrolled Component (Counter App)
+              </Link>
+              <Link to='/controlledCount' className='nav_link3'>
+                Controlled Component Form
+              </Link>
+              <Link to='/reactHelmet' className='nav_link3'>
+                React Helmet
+              </Link>
+              <Link to='/reactH' className='nav_link3'>
+                React Helmets
+              </Link>
+              <Link to='/propTypes' className='nav_link3'>
+                PropTypes
+              </Link>
+              <Link to='/temp' className='nav_link3'>
+                PropTypes Example
+              </Link>
             </nav>
           </div>
 
@@ -220,6 +280,24 @@ function App() {
                 <Route path='/module9demo3' element={<Module9demo3 />} />
                 <Route path='/module9demo4' element={<Module9demo4 />} />
                 <Route path='/module9demo5' element={<Module9demo5 />} />
+                <Route path='/module9demo6' element={<Module9demo6 />} />
+                <Route path='/module9demo7' element={<Module9demo7 />} />
+                <Route path='/module9demo8' element={<Module9demo8 />} />
+                <Route path='/milestone9demo1' element={<MileStone9demo1 />} />
+                <Route path='/milestone9demo2' element={<MileStone9demo2 />} />
+                <Route path='/milestone9demo3' element={<MileStone9demo3 />} />
+                <Route path='/module10demo1' element={<Module10demo1 />} />
+                <Route path='/controlled' element={<ControlledCompo />} />
+                <Route path='/uncontrolled' element={<UncontrolledCompo />} />
+                <Route path='/count' element={<Count />} />
+                <Route
+                  path='/controlledCount'
+                  element={<ControlledCompoForm />}
+                />
+                <Route path='/reactHelmet' element={<ReactHelmet />} />
+                <Route path='/reactH/*' element={<ReactH />} />
+                <Route path='/propTypes' element={<PropCompo />} />
+                <Route path='/temp' element={<Temp />} />
 
                 <Route path='*' element={<NotFound />} />
               </Routes>

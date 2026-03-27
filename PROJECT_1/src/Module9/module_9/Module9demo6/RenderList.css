@@ -1,0 +1,11 @@
+h3 {
+  background-color: antiquewhite;
+  padding: 4px 8px;
+  margin: 10px 0;
+  width: fit-content;
+  color: black;
+}
+
+/* li:nth-child(even) {
+  background-color: #504545;
+} */
