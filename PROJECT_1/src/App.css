@@ -12,7 +12,7 @@
 
 body {
   margin: 0;
-  background-color: rgb(56, 54, 54);
+  background-color: rgb(31, 29, 29);
   min-height: 100vh;
   color: white;
 }
@@ -29,26 +29,26 @@ body {
   width: 260px;
   height: 100vh;
   overflow-y: auto;
-  background-color: rgb(56, 54, 54);
+  background-color: black
 }
 
 /* Links */
 .list_container {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 0 20px;
   gap: 18px;
 }
 
 /* Main content */
 .route_container3 {
   margin-left: 260px;
-  padding: 20px 0;
+  /* padding: 20px 0; */
   width: 100%;
   /* min-height: 100vh; */
 }
 
 .nav_link3 {
   color: white;
-  font-size: 20px;
+  font-size: 14px;
 }

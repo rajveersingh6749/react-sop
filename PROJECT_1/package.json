@@ -11,10 +11,13 @@
   },
   "dependencies": {
     "axios": "^1.13.6",
+    "classnames": "^2.5.1",
     "prop-types": "^15.8.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-error-boundary": "^6.1.1",
     "react-helmet": "^6.1.0",
+    "react-helmet-async": "^3.0.0",
     "react-router-dom": "^7.13.1",
     "react-window": "^2.2.7"
   },

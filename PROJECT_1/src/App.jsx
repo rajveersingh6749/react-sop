@@ -1,54 +1,119 @@
 import './App.css'
-import Card1 from './Module1/module_1/components/Card1'
-import Task1 from './Module1/milestone_task/task1'
-import MyForm from './Module2/module_2/MyForm'
-import Counter from './Module2/milestone_task/Counter'
-import Task3 from './Module3/module_3/task3.jsx'
-import TimerComponent from './Module3/milestone_task/TimerComponent'
-import Mod_4 from './Module4/module_4/mod_4.jsx'
-import Task4 from './Module4/milestone_task/Counter.jsx'
-import Mod_5 from './Module5/module_5/Mod_5.jsx'
-import Task5 from './Module5/milestone_task/MyApp.jsx'
-import Module6demo1 from './Module6/module_6/module6_demos/module6Demo1/module6_demo1'
-import Module6demo2 from './Module6/module_6/module6_demos/module6Demo2/module6_demo2.jsx'
-import Module6demo3 from './Module6/module_6/module6_demos/module6Demo3/module6_demo3.jsx'
-import Task6 from './Module6/milestone_task/toggleTheme.jsx'
-import Module7demo1 from './Module7/module_7/module7demo1/First.jsx'
-import Module7demo2 from './Module7/module_7/module7demo2/Second.jsx'
-import Module7demo3 from './Module7/module_7/module7demo3/Third.jsx'
-import Module7demo4 from './Module7/module_7/module7demo4/Fourth.jsx'
-import Task7 from './Module7/milestone_task/Fifth.jsx'
+import { lazy } from 'react'
+
+const Card1 = lazy(() => import('./Module1/module_1/components/Card1'))
+const Task1 = lazy(() => import('./Module1/milestone_task/task1'))
+const MyForm = lazy(() => import('./Module2/module_2/MyForm'))
+const Counter = lazy(() => import('./Module2/milestone_task/Counter'))
+const Task3 = lazy(() => import('./Module3/module_3/task3.jsx'))
+const TimerComponent = lazy(
+  () => import('./Module3/milestone_task/TimerComponent'),
+)
+const Mod_4 = lazy(() => import('./Module4/module_4/mod_4.jsx'))
+const Task4 = lazy(() => import('./Module4/milestone_task/Counter.jsx'))
+const Mod_5 = lazy(() => import('./Module5/module_5/Mod_5.jsx'))
+const Task5 = lazy(() => import('./Module5/milestone_task/MyApp.jsx'))
+const Module6demo1 = lazy(
+  () => import('./Module6/module_6/module6_demos/module6Demo1/module6_demo1'),
+)
+const Module6demo2 = lazy(
+  () =>
+    import('./Module6/module_6/module6_demos/module6Demo2/module6_demo2.jsx'),
+)
+const Module6demo3 = lazy(
+  () =>
+    import('./Module6/module_6/module6_demos/module6Demo3/module6_demo3.jsx'),
+)
+const Task6 = lazy(() => import('./Module6/milestone_task/toggleTheme.jsx'))
+const Module7demo1 = lazy(
+  () => import('./Module7/module_7/module7demo1/First.jsx'),
+)
+const Module7demo2 = lazy(
+  () => import('./Module7/module_7/module7demo2/Second.jsx'),
+)
+const Module7demo3 = lazy(
+  () => import('./Module7/module_7/module7demo3/Third.jsx'),
+)
+const Module7demo4 = lazy(
+  () => import('./Module7/module_7/module7demo4/Fourth.jsx'),
+)
+const Task7 = lazy(() => import('./Module7/milestone_task/Fifth.jsx'))
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
-import NotFound from './NotFound.jsx'
-import Home from './Home.jsx'
-import Module8demo1 from './Module8/module_8/module8demo1/First.jsx'
-import Module8demo2 from './Module8/module_8/module8demo2/Second.jsx'
-import Module8demo3 from './Module8/module_8/module8demo3/Third.jsx'
+const NotFound = lazy(() => import('./NotFound.jsx'))
+const Home = lazy(() => import('./Home.jsx'))
+const Module8demo1 = lazy(
+  () => import('./Module8/module_8/module8demo1/First.jsx'),
+)
+const Module8demo2 = lazy(
+  () => import('./Module8/module_8/module8demo2/Second.jsx'),
+)
+const Module8demo3 = lazy(
+  () => import('./Module8/module_8/module8demo3/Third.jsx'),
+)
 import { useState } from 'react'
-import Login from './Module8/Login'
-import ProtectedRoute from './Module8/ProtectedRoute'
-import MileStone8 from './Module8/milestone_task/MileStone8.jsx'
-import Transition from './Module8/start_transition/Transition.jsx'
-import Module9demo1 from './Module9/module_9/Module9demo1/ReactMemo.jsx'
-import Module9demo2 from './Module9/module_9/Module9demo2/UseMemo.jsx'
-import Module9demo3 from './Module9/module_9/Module9demo3/UseMemo.jsx'
-import Module9demo4 from './Module9/module_9/Module9demo4/UseCallback.jsx'
-import Module9demo5 from './Module9/module_9/Module9demo5/UseCallback.jsx'
-import Module9demo6 from './Module9/module_9/Module9demo6/RenderList.jsx'
-import Module9demo7 from './Module9/module_9/Module9demo7/ListVirtualization.jsx'
-import Module9demo8 from './Module9/module_9/Module9demo8/AutoMemo.jsx'
-import MileStone9demo1 from './Module9/milestone_task/Demo1/MilestoneTask9demo1.jsx'
-import MileStone9demo2 from './Module9/milestone_task/Demo2/MilestoneTask9demo2.jsx'
-import MileStone9demo3 from './Module9/milestone_task/Demo3/MilestoneTask9demo3.jsx'
-import Module10demo1 from './Module10/module_10/module10demo1/UnitTesting.jsx'
-import ControlledCompo from './Addi1/ControlledCompo.jsx'
-import UncontrolledCompo from './Addi1/UncontrolledCompo.jsx'
-import Count from './Addi1/UncontrolledCount.jsx'
-import ControlledCompoForm from './Addi1/ControlledCompoForm.jsx'
-import ReactHelmet from './Addi1/ReactHelmet.jsx'
-import ReactH from './Addi1/ReactHelmet/ReactH.jsx'
-import PropCompo from './Addi1/Prop_Types/PropCompo.jsx'
-import Temp from './Addi1/Prop_Types/temp.jsx'
+const Login = lazy(() => import('./Module8/Login'))
+const ProtectedRoute = lazy(() => import('./Module8/ProtectedRoute'))
+const MileStone8 = lazy(() => import('./Module8/milestone_task/MileStone8.jsx'))
+const Transition = lazy(
+  () => import('./Module8/start_transition/Transition.jsx'),
+)
+const Module9demo1 = lazy(
+  () => import('./Module9/module_9/Module9demo1/ReactMemo.jsx'),
+)
+const Module9demo2 = lazy(
+  () => import('./Module9/module_9/Module9demo2/UseMemo.jsx'),
+)
+const Module9demo3 = lazy(
+  () => import('./Module9/module_9/Module9demo3/UseMemo.jsx'),
+)
+const Module9demo4 = lazy(
+  () => import('./Module9/module_9/Module9demo4/UseCallback.jsx'),
+)
+const Module9demo5 = lazy(
+  () => import('./Module9/module_9/Module9demo5/UseCallback.jsx'),
+)
+const Module9demo6 = lazy(
+  () => import('./Module9/module_9/Module9demo6/RenderList.jsx'),
+)
+const Module9demo7 = lazy(
+  () => import('./Module9/module_9/Module9demo7/ListVirtualization.jsx'),
+)
+const Module9demo8 = lazy(
+  () => import('./Module9/module_9/Module9demo8/AutoMemo.jsx'),
+)
+const MileStone9demo1 = lazy(
+  () => import('./Module9/milestone_task/Demo1/MilestoneTask9demo1.jsx'),
+)
+const MileStone9demo2 = lazy(
+  () => import('./Module9/milestone_task/Demo2/MilestoneTask9demo2.jsx'),
+)
+const MileStone9demo3 = lazy(
+  () => import('./Module9/milestone_task/Demo3/MilestoneTask9demo3.jsx'),
+)
+const Module10demo1 = lazy(
+  () => import('./Module10/module_10/module10demo1/UnitTesting.jsx'),
+)
+const ControlledCompo = lazy(() => import('./Add/ControlledCompo.jsx'))
+const UncontrolledCompo = lazy(() => import('./Add/UncontrolledCompo.jsx'))
+const Count = lazy(() => import('./Add/UncontrolledCount.jsx'))
+const ControlledCompoForm = lazy(
+  () => import('./Add/ControlledCompoForm.jsx'),
+)
+
+const ReactHelmets = lazy(() => import('./Add/React_Helmets/ReactHelmets.jsx'))
+const PropCompo = lazy(() => import('./Add/Prop_Types/PropCompo.jsx'))
+const Temp = lazy(() => import('./Add/Prop_Types/temp.jsx'))
+const ClassNames = lazy(() => import('./Add/classnames/ClassNames.jsx'))
+const UsingVariant = lazy(() => import('./Add/classnames/UsingVariant.jsx'))
+
+const SuspenseUserDetails = lazy(
+  () => import('./Add/Suspense/SuspenseUserDetails.jsx'),
+)
+const DemoSuspense = lazy(() => import('./Add/Suspense2/DemoSuspense.jsx'))
+// const MyComponent = lazy(() => import('./Add/ErrorBoundary/MyComponent.jsx'))
+// const EB = lazy(() => import('./Add/ErrorBoundary/EB.jsx'))
+const ErrorBoundary = lazy(() => import('./Add/ErrorBoundary/ErrorB.jsx'))
+const HOC = lazy(() => import('./Add/HOC/HigherOrderComponent.jsx'))
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -185,17 +250,40 @@ function App() {
               <Link to='/controlledCount' className='nav_link3'>
                 Controlled Component Form
               </Link>
-              <Link to='/reactHelmet' className='nav_link3'>
-                React Helmet
-              </Link>
-              <Link to='/reactH' className='nav_link3'>
+              {/* <Link to='/reactHelmets' className='nav_link3'>
                 React Helmets
-              </Link>
+              </Link> */}
+
               <Link to='/propTypes' className='nav_link3'>
                 PropTypes
               </Link>
               <Link to='/temp' className='nav_link3'>
                 PropTypes Example
+              </Link>
+              <Link to='/classnames' className='nav_link3'>
+                Classnames
+              </Link>
+              <Link to='/usingVariant' className='nav_link3'>
+                UsingVariant
+              </Link>
+
+              <Link to='/suspense' className='nav_link3'>
+                Suspense using use() API
+              </Link>
+              <Link to='/demoSuspense' className='nav_link3'>
+                Suspense using useEffect() hook
+              </Link>
+              {/* <Link to='/errorBoundary' className='nav_link3'>
+                Error Boundaries
+              </Link>
+              <Link to='/eb' className='nav_link3'>
+                EB Demo
+              </Link> */}
+              <Link to='/errorBoundary' className='nav_link3'>
+                Error Boundary
+              </Link>
+              <Link to='/hoc' className='nav_link3'>
+                HOC
               </Link>
             </nav>
           </div>
@@ -294,10 +382,17 @@ function App() {
                   path='/controlledCount'
                   element={<ControlledCompoForm />}
                 />
-                <Route path='/reactHelmet' element={<ReactHelmet />} />
-                <Route path='/reactH/*' element={<ReactH />} />
+                {/* <Route path='/reactHelmets/*' element={<ReactHelmets />} /> */}
                 <Route path='/propTypes' element={<PropCompo />} />
                 <Route path='/temp' element={<Temp />} />
+                <Route path='/classnames' element={<ClassNames />} />
+                <Route path='/usingVariant' element={<UsingVariant />} />
+                <Route path='/suspense' element={<SuspenseUserDetails />} />
+                <Route path='/demoSuspense' element={<DemoSuspense />} />
+                {/* <Route path='/errorBoundary' element={<MyComponent />} />
+                <Route path='/eb' element={<EB />} /> */}
+                <Route path='/errorBoundary' element={<ErrorBoundary />} />
+                <Route path='/hoc' element={<HOC />} />
 
                 <Route path='*' element={<NotFound />} />
               </Routes>
