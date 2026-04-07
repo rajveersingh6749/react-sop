@@ -1,0 +1,113 @@
+.filters {
+  padding: 18px 10px;
+  background-color: rgb(43, 39, 39);
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-radius: 20px;
+  /* border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px; */
+}
+
+.filter-btn {
+  margin-right: 40px;
+  padding: 6px 10px;
+  width: 80px;
+  height: 40px;
+  background-color: blue;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.filter-btn:hover {
+  background-color: rgb(66, 66, 167);
+}
+
+.filter-btn.active {
+  font-weight: bold;
+}
+
+.grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.badge-success {
+  width: fit-content;
+  background: green;
+  color: white;
+}
+
+.badge-warning {
+  width: fit-content;
+  background: orange;
+  color: white;
+}
+
+.badge-danger {
+  width: fit-content;
+  background: red;
+  color: white;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.actions Button {
+  border: none;
+  border-radius: 10px;
+}
+
+.selected {
+  background: #393a3b;
+}
+
+.btn {
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: blue;
+  color: white;
+}
+
+.btn-secondary {
+  background: gray;
+  color: white;
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.featured {
+  border-color: gold;
+}
+
+.out-of-stock {
+  opacity: 0.6;
+}

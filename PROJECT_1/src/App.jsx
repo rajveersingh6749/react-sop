@@ -100,8 +100,9 @@ const ReactHelmets = lazy(
 )
 const PropCompo = lazy(() => import('./Add/Prop_Types/PropCompo.jsx'))
 const Temp = lazy(() => import('./Add/Prop_Types/temp.jsx'))
-const ClassNames = lazy(() => import('./Add/classnames/ClassNames.jsx'))
-const UsingVariant = lazy(() => import('./Add/classnames/UsingVariant.jsx'))
+const ClassNames = lazy(
+  () => import('./Add/ClassnamesPackage/ClassNamePackage.jsx'),
+)
 
 const SuspenseUserDetails = lazy(
   () => import('./Add/Suspense/SuspenseUserDetails.jsx'),
@@ -255,10 +256,6 @@ function App() {
               <Link to='/classnames' className='nav_link3'>
                 Classnames
               </Link>
-              <Link to='/usingVariant' className='nav_link3'>
-                UsingVariant
-              </Link>
-
               <Link to='/suspense' className='nav_link3'>
                 Suspense using use() API
               </Link>
@@ -377,7 +374,6 @@ function App() {
                 <Route path='/propTypes' element={<PropCompo />} />
                 <Route path='/temp' element={<Temp />} />
                 <Route path='/classnames' element={<ClassNames />} />
-                <Route path='/usingVariant' element={<UsingVariant />} />
                 <Route path='/suspense' element={<SuspenseUserDetails />} />
                 <Route path='/demoSuspense' element={<DemoSuspense />} />
                 <Route path='/errorBoundary' element={<ErrorBoundary />} />
