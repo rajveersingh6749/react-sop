@@ -90,17 +90,14 @@ const MileStone9demo2 = lazy(
 const MileStone9demo3 = lazy(
   () => import('./Module9/milestone_task/Demo3/MilestoneTask9demo3.jsx'),
 )
-const Module10demo1 = lazy(
-  () => import('./Module10/module_10/module10demo1/UnitTesting.jsx'),
-)
 const ControlledCompo = lazy(() => import('./Add/ControlledCompo.jsx'))
 const UncontrolledCompo = lazy(() => import('./Add/UncontrolledCompo.jsx'))
 const Count = lazy(() => import('./Add/UncontrolledCount.jsx'))
-const ControlledCompoForm = lazy(
-  () => import('./Add/ControlledCompoForm.jsx'),
-)
+const ControlledCompoForm = lazy(() => import('./Add/ControlledCompoForm.jsx'))
 
-const ReactHelmets = lazy(() => import('./Add/React_Helmets/ReactHelmets.jsx'))
+const ReactHelmets = lazy(
+  () => import('./Add/React_Helmets/ReactHelmetsApp.jsx'),
+)
 const PropCompo = lazy(() => import('./Add/Prop_Types/PropCompo.jsx'))
 const Temp = lazy(() => import('./Add/Prop_Types/temp.jsx'))
 const ClassNames = lazy(() => import('./Add/classnames/ClassNames.jsx'))
@@ -110,8 +107,6 @@ const SuspenseUserDetails = lazy(
   () => import('./Add/Suspense/SuspenseUserDetails.jsx'),
 )
 const DemoSuspense = lazy(() => import('./Add/Suspense2/DemoSuspense.jsx'))
-// const MyComponent = lazy(() => import('./Add/ErrorBoundary/MyComponent.jsx'))
-// const EB = lazy(() => import('./Add/ErrorBoundary/EB.jsx'))
 const ErrorBoundary = lazy(() => import('./Add/ErrorBoundary/ErrorB.jsx'))
 const HOC = lazy(() => import('./Add/HOC/HigherOrderComponent.jsx'))
 
@@ -235,9 +230,7 @@ function App() {
               <Link to='/milestone9demo3' className='nav_link3'>
                 Milestone Task 9 with React 19 Compiler
               </Link>
-              <Link to='/module10demo1' className='nav_link3'>
-                Module10demo1 Unit Testing
-              </Link>
+
               <Link to='/controlled' className='nav_link3'>
                 Controlled Component
               </Link>
@@ -250,10 +243,9 @@ function App() {
               <Link to='/controlledCount' className='nav_link3'>
                 Controlled Component Form
               </Link>
-              {/* <Link to='/reactHelmets' className='nav_link3'>
+              <Link to='/helmet' className='nav_link3'>
                 React Helmets
-              </Link> */}
-
+              </Link>
               <Link to='/propTypes' className='nav_link3'>
                 PropTypes
               </Link>
@@ -374,7 +366,6 @@ function App() {
                 <Route path='/milestone9demo1' element={<MileStone9demo1 />} />
                 <Route path='/milestone9demo2' element={<MileStone9demo2 />} />
                 <Route path='/milestone9demo3' element={<MileStone9demo3 />} />
-                <Route path='/module10demo1' element={<Module10demo1 />} />
                 <Route path='/controlled' element={<ControlledCompo />} />
                 <Route path='/uncontrolled' element={<UncontrolledCompo />} />
                 <Route path='/count' element={<Count />} />
@@ -382,15 +373,13 @@ function App() {
                   path='/controlledCount'
                   element={<ControlledCompoForm />}
                 />
-                {/* <Route path='/reactHelmets/*' element={<ReactHelmets />} /> */}
+                <Route path='/helmet/*' element={<ReactHelmets />} />
                 <Route path='/propTypes' element={<PropCompo />} />
                 <Route path='/temp' element={<Temp />} />
                 <Route path='/classnames' element={<ClassNames />} />
                 <Route path='/usingVariant' element={<UsingVariant />} />
                 <Route path='/suspense' element={<SuspenseUserDetails />} />
                 <Route path='/demoSuspense' element={<DemoSuspense />} />
-                {/* <Route path='/errorBoundary' element={<MyComponent />} />
-                <Route path='/eb' element={<EB />} /> */}
                 <Route path='/errorBoundary' element={<ErrorBoundary />} />
                 <Route path='/hoc' element={<HOC />} />
 
