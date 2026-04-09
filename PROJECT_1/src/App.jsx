@@ -15,6 +15,7 @@ const ReactElementsVsDomElements = lazy(
 const ProductCard = lazy(
   () => import('./Module1/milestone_task/ProductCardApp.jsx'),
 )
+const UseStateHook = lazy(() => import('./Module2/module_2/Module2Demo1/UseStateHook.jsx'))
 const MyForm = lazy(() => import('./Module2/module_2/MyForm'))
 const Counter = lazy(() => import('./Module2/milestone_task/Counter'))
 const Task3 = lazy(() => import('./Module3/module_3/task3.jsx'))
@@ -150,6 +151,9 @@ function App() {
               </Link>
               <Link to='/productcard' className='nav_link3'>
                 Milestone Task: Product Card
+              </Link>
+              <Link to='/usestatehook' className='nav_link3'>
+                Module2 Demo1: UseState Hook Managing Local Component State
               </Link>
               <Link to='/module2' className='nav_link3'>
                 Module 2 State and Events
@@ -311,6 +315,7 @@ function App() {
                   element={<ReactElementsVsDomElements />}
                 />
                 <Route path='/productcard' element={<ProductCard />} />
+                <Route path='/usestatehook' element={<UseStateHook />} />
                 <Route path='/module2' element={<MyForm />} />
                 <Route path='/milestone2' element={<Counter />} />
                 <Route path='/module3' element={<Task3 />} />

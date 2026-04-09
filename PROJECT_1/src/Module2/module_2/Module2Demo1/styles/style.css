@@ -1,0 +1,128 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: white;
+}
+
+/* App container */
+.app {
+  padding: 40px;
+  max-width: 1200px;   /* 👈 controls overall width */
+  margin: 0 auto;      /* 👈 center */
+}
+
+/* Title */
+.title {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+/* Layout */
+.layout {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start; /* 👈 prevents stretch */
+}
+
+/* Product List Grid */
+.product-list {
+  flex: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 280px));
+  gap: 25px;
+  justify-content: center; /* 👈 center cards */
+}
+
+/* Card */
+.card {
+  width: 100%;
+  max-width: 280px;  /* 👈 fixed size */
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Hover */
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Image */
+.card img {
+  width: 100%;
+  height: 160px;      /* 👈 FIXED IMAGE SIZE */
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Text */
+.card h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #cbd5e1;
+}
+
+/* Button */
+.card button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border: none;
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Cart */
+.cart {
+  flex: 1;
+  max-width: 350px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+}
+
+/* Cart Items */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+
+/* Quantity Controls */
+.qty button {
+  margin: 0 5px;
+  padding: 4px 8px;
+  border: none;
+  background: #3b82f6;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
