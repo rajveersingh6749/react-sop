@@ -5,11 +5,16 @@ const ComponentBasedUI = lazy(
   () => import('./Module1/module_1/Module1Demo1/ComponentBasedUI.jsx'),
 )
 const EmbeddingExpressions = lazy(
-  () =>
-    import('./Module1/module_1/Module1Demo2/EmbeddingExpressions.jsx'),
+  () => import('./Module1/module_1/Module1Demo2/EmbeddingExpressions.jsx'),
 )
-const Card1 = lazy(() => import('./Module1/module_1/components/Card1'))
-const Task1 = lazy(() => import('./Module1/milestone_task/task1'))
+const Props = lazy(() => import('./Module1/module_1/Module1Demo3/Props.jsx'))
+const ReactElementsVsDomElements = lazy(
+  () =>
+    import('./Module1/module_1/Module1Demo4/ReactElements_vs_DomElements.jsx'),
+)
+const ProductCard = lazy(
+  () => import('./Module1/milestone_task/ProductCardApp.jsx'),
+)
 const MyForm = lazy(() => import('./Module2/module_2/MyForm'))
 const Counter = lazy(() => import('./Module2/milestone_task/Counter'))
 const Task3 = lazy(() => import('./Module3/module_3/task3.jsx'))
@@ -131,16 +136,20 @@ function App() {
                 Home
               </Link>
               <Link to='/componentbasedui' className='nav_link3'>
-                Component Based UI
+                Module1 Demo1: Component Based UI
               </Link>
               <Link to='/embeddingexpressions' className='nav_link3'>
-                JSX, Embedding Expressions, class vs className and Self-Closing Tags
+                Module1 Demo2: JSX, Embedding Expressions, class vs className
+                and Self-Closing Tags
               </Link>
-              <Link to='/module1' className='nav_link3'>
-                Module 1 Props
+              <Link to='/props' className='nav_link3'>
+                Module1 Demo3: Props, PropTypes, Default Props
               </Link>
-              <Link to='/milestone1' className='nav_link3'>
-                Milestone Task 1 Product Card
+              <Link to='/reactelementsvsdomelements' className='nav_link3'>
+                Module1 Demo4: React Elements vs DOM Elements
+              </Link>
+              <Link to='/productcard' className='nav_link3'>
+                Milestone Task: Product Card
               </Link>
               <Link to='/module2' className='nav_link3'>
                 Module 2 State and Events
@@ -275,12 +284,6 @@ function App() {
               <Link to='/demoSuspense' className='nav_link3'>
                 Suspense using useEffect() hook
               </Link>
-              {/* <Link to='/errorBoundary' className='nav_link3'>
-                Error Boundaries
-              </Link>
-              <Link to='/eb' className='nav_link3'>
-                EB Demo
-              </Link> */}
               <Link to='/errorBoundary' className='nav_link3'>
                 Error Boundary
               </Link>
@@ -302,11 +305,12 @@ function App() {
                   path='/embeddingexpressions'
                   element={<EmbeddingExpressions />}
                 />
+                <Route path='/props' element={<Props />} />
                 <Route
-                  path='/module1'
-                  element={<Card1 name='Dave' age='22' />}
+                  path='/reactelementsvsdomelements'
+                  element={<ReactElementsVsDomElements />}
                 />
-                <Route path='/milestone1' element={<Task1 />} />
+                <Route path='/productcard' element={<ProductCard />} />
                 <Route path='/module2' element={<MyForm />} />
                 <Route path='/milestone2' element={<Counter />} />
                 <Route path='/module3' element={<Task3 />} />

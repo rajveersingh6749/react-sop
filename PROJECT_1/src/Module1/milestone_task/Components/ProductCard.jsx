@@ -1,14 +1,22 @@
-import './ProductCard.css'
+import '../styles/style.css'
 
-const ProductCard = ({ name, image, price, desc }) => {
+export default function ProductCard({ name, price, imageURL, description }) {
   return (
-    <div className='product_card'>
-      <h2>{name}</h2>
-      <img src={image} alt={name} />
-      <h3>{price}</h3>
-      <p>{desc}</p>
+    <div className='card'>
+      <div className='image-container'>
+        <span className='badge'>New</span>
+        <img src={imageURL} alt={name} />
+      </div>
+
+      <div className='card-content'>
+        <h2 className='product-name'>{name}</h2>
+        <p className='description'>{description}</p>
+
+        <div className='card-footer'>
+          <span className='price'>${price}</span>
+          <button className='btn'>View</button>
+        </div>
+      </div>
     </div>
   )
 }
-
-export default ProductCard
