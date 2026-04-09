@@ -1,6 +1,13 @@
 import './App.css'
 import { lazy } from 'react'
 
+const ComponentBasedUI = lazy(
+  () => import('./Module1/module_1/Module1Demo1/ComponentBasedUI.jsx'),
+)
+const EmbeddingExpressions = lazy(
+  () =>
+    import('./Module1/module_1/Module1Demo2/EmbeddingExpressions.jsx'),
+)
 const Card1 = lazy(() => import('./Module1/module_1/components/Card1'))
 const Task1 = lazy(() => import('./Module1/milestone_task/task1'))
 const MyForm = lazy(() => import('./Module2/module_2/MyForm'))
@@ -122,6 +129,12 @@ function App() {
             <nav className='list_container'>
               <Link to='/' className='nav_link3'>
                 Home
+              </Link>
+              <Link to='/componentbasedui' className='nav_link3'>
+                Component Based UI
+              </Link>
+              <Link to='/embeddingexpressions' className='nav_link3'>
+                JSX, Embedding Expressions, class vs className and Self-Closing Tags
               </Link>
               <Link to='/module1' className='nav_link3'>
                 Module 1 Props
@@ -281,6 +294,14 @@ function App() {
             <div className='custom_container3'>
               <Routes>
                 <Route path='/' element={<Home />} />
+                <Route
+                  path='/componentbasedui'
+                  element={<ComponentBasedUI />}
+                />
+                <Route
+                  path='/embeddingexpressions'
+                  element={<EmbeddingExpressions />}
+                />
                 <Route
                   path='/module1'
                   element={<Card1 name='Dave' age='22' />}
