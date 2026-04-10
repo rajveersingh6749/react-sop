@@ -1,0 +1,27 @@
+.list {
+  border: 1px solid gray;
+  padding: 20px;
+  border-radius: 20px;
+  height: 510px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid gray;
+  padding: 18px;
+  text-align: center;
+  overflow-wrap: break-word;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+th {
+  background: #333;
+  color: white;
+}

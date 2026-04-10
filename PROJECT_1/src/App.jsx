@@ -109,7 +109,6 @@ const ControlledCompo = lazy(() => import('./Add/ControlledCompo.jsx'))
 const UncontrolledCompo = lazy(() => import('./Add/UncontrolledCompo.jsx'))
 const Count = lazy(() => import('./Add/UncontrolledCount.jsx'))
 const ControlledCompoForm = lazy(() => import('./Add/ControlledCompoForm.jsx'))
-
 const ReactHelmets = lazy(
   () => import('./Add/React_Helmets/ReactHelmetsApp.jsx'),
 )
@@ -117,13 +116,15 @@ const PropTypes = lazy(() => import('./Add/Prop_Types/PropTypes.jsx'))
 const ClassNames = lazy(
   () => import('./Add/ClassnamesPackage/ClassNamePackage.jsx'),
 )
-
 const SuspenseUserDetails = lazy(
   () => import('./Add/Suspense/SuspenseUserDetails.jsx'),
 )
 const DemoSuspense = lazy(() => import('./Add/Suspense2/DemoSuspense.jsx'))
 const ErrorBoundary = lazy(() => import('./Add/ErrorBoundary/ErrorB.jsx'))
 const HOC = lazy(() => import('./Add/HOC/HigherOrderComponent.jsx'))
+const FormValidation = lazy(
+  () => import('./React_Form_Validation/FormValidation.jsx'),
+)
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -292,6 +293,9 @@ function App() {
               <Link to='/hoc' className='nav_link3'>
                 HOC
               </Link>
+              <Link to='/formvalidation' className='nav_link3'>
+                React Form Validation
+              </Link>
             </nav>
           </div>
 
@@ -404,6 +408,7 @@ function App() {
                 <Route path='/demoSuspense' element={<DemoSuspense />} />
                 <Route path='/errorBoundary' element={<ErrorBoundary />} />
                 <Route path='/hoc' element={<HOC />} />
+                <Route path='/formvalidation' element={<FormValidation />} />
 
                 <Route path='*' element={<NotFound />} />
               </Routes>

@@ -6,7 +6,7 @@ import '../../styles/style.css'
 export default function TeamCard({ member, onSelect }) {
   return (
     <div className='card'>
-      <Avatar src={member.avatar} size={70} />
+      <Avatar src={member.avatar} size={"70"} />
 
       <h3>{member.name}</h3>
       <p>{member.role}</p>
