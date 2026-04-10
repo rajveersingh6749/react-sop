@@ -9,6 +9,7 @@ const defaultUsers = [
     email: 'john@gmail.com',
     gender: 'male',
     skills: ['HTML', 'CSS'],
+    role: 'frontend',
     phone: '9999999999',
     experience: '2',
     age: 25,
@@ -18,6 +19,7 @@ const defaultUsers = [
     email: 'jane@gmail.com',
     gender: 'female',
     skills: ['React'],
+    role: 'backend',
     phone: '8888888888',
     experience: '3',
     age: 28,
@@ -27,6 +29,7 @@ const defaultUsers = [
     email: 'alex@gmail.com',
     gender: 'male',
     skills: ['JS'],
+    role: 'fullstack',
     phone: '7777777777',
     experience: '1',
     age: 22,
@@ -48,9 +51,12 @@ const FormValidation = () => {
   }, [])
 
   return (
-    <div className='app_container'>
-      <InputFields items={items} setItems={setItems} />
-      <List items={items} />
+    <div className='_container'>
+      <h1 className='title'>User Management Dashboard</h1>
+      <div className='app_container'>
+        <InputFields items={items} setItems={setItems} />
+        <List items={items} />
+      </div>
     </div>
   )
 }

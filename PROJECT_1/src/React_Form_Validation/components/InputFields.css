@@ -4,19 +4,19 @@ body {
 
 .main_container {
   display: flex;
-  justify-content: center;
 }
 
 .form_container {
-  background: transparent;
+  background: #1e293b;
   width: 500px;
-  height: 510px;
+  height: 600px;
   display: flex;
   flex-direction: column;
+  justify-content: start;
   align-items: center;
-  justify-content: center;
   border-radius: 20px;
   border: 1px solid gray;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
 h1 {
@@ -24,8 +24,10 @@ h1 {
   margin-bottom: 10px;
 }
 
-h2 {
+.form_container h2 {
+  margin-top: 14px;
   margin-bottom: 20px;
+  color: #38bdf8;
 }
 
 form {
@@ -64,12 +66,15 @@ label {
 
 button {
   border: none;
-  padding: 8px 14px;
-  background-color: rgb(54, 54, 158);
-  color: black;
+  padding: 8px 12px;
+  background: blueviolet;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
   border-radius: 10px;
   font-size: 20px;
-  width: 180px;
+  width: 100%;
 }
 
 button:hover {
@@ -80,6 +85,22 @@ button:hover {
 input {
   border: none;
   outline: none;
-  padding: 8px 5px;
+  padding: 10px;
   border-radius: 6px;
+  background: #334155;
+  width: 100%;
+}
+
+input:focus {
+  border: 1px solid #38bdf8;
+}
+
+input[type='range'] {
+  accent-color: #38bdf8;
+  padding: 0;
+}
+
+label {
+  font-size: 18px;
+  color: #cbd5f5;
 }

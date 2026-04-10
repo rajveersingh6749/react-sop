@@ -3,4 +3,12 @@
     grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
     gap: 40px;
     margin-top: 40px;
+    background-color: rgb(3, 3, 41);
+    height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    background-color: rgb(23, 23, 43);
+    padding: 10px 0;
 }

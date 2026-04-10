@@ -8,13 +8,14 @@ const InputFields = ({ items, setItems }) => {
     age: '',
     gender: '',
     skills: [],
+    role: '',
     phone: '',
     experience: '0',
     password: '',
     confirmPassword: '',
   })
 
-  console.log("ITEMS: ", items)
+  console.log('ITEMS: ', items)
 
   const submitHandler = (e) => {
     e.preventDefault()
@@ -33,6 +34,7 @@ const InputFields = ({ items, setItems }) => {
       age: '',
       gender: '',
       skills: [],
+      role: '',
       phone: '',
       experience: '0',
       password: '',
@@ -143,13 +145,22 @@ const InputFields = ({ items, setItems }) => {
             <label>
               <input
                 type='checkbox'
-                value='JAVASCRIPT'
-                checked={input.skills.includes('JAVASCRIPT')}
+                value='JS'
+                checked={input.skills.includes('JS')}
                 onChange={handleSkills}
               />
-              JAVASCRIPT
+              JS
             </label>
           </div>
+          <label>Role:</label>
+          <select name='role' value={input.role} onChange={handleChange}>
+            <option value='' disabled>
+              Select
+            </option>
+            <option value='frontend'>Frontend</option>
+            <option value='backend'>Backend</option>
+            <option value='fullstack'>Fullstack</option>
+          </select>
 
           <label>
             Phone:
