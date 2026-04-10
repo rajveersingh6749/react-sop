@@ -15,7 +15,9 @@ const ReactElementsVsDomElements = lazy(
 const ProductCard = lazy(
   () => import('./Module1/milestone_task/ProductCardApp.jsx'),
 )
-const UseStateHook = lazy(() => import('./Module2/module_2/Module2Demo1/UseStateHook.jsx'))
+const UseStateHook = lazy(
+  () => import('./Module2/module_2/Module2Demo1/UseStateHook.jsx'),
+)
 const MyForm = lazy(() => import('./Module2/module_2/MyForm'))
 const Counter = lazy(() => import('./Module2/milestone_task/Counter'))
 const Task3 = lazy(() => import('./Module3/module_3/task3.jsx'))
@@ -111,8 +113,9 @@ const ControlledCompoForm = lazy(() => import('./Add/ControlledCompoForm.jsx'))
 const ReactHelmets = lazy(
   () => import('./Add/React_Helmets/ReactHelmetsApp.jsx'),
 )
-const PropCompo = lazy(() => import('./Add/Prop_Types/PropCompo.jsx'))
-const Temp = lazy(() => import('./Add/Prop_Types/temp.jsx'))
+// const PropCompo = lazy(() => import('./Add/Prop_Types/PropCompo.jsx'))
+// const Temp = lazy(() => import('./Add/Prop_Types/temp.jsx'))
+const PropTypes = lazy(() => import('./Add/Prop_Types/PropTypes.jsx'))
 const ClassNames = lazy(
   () => import('./Add/ClassnamesPackage/ClassNamePackage.jsx'),
 )
@@ -273,11 +276,14 @@ function App() {
               <Link to='/helmet' className='nav_link3'>
                 React Helmets
               </Link>
-              <Link to='/propTypes' className='nav_link3'>
+              {/* <Link to='/propTypes' className='nav_link3'>
                 PropTypes
               </Link>
               <Link to='/temp' className='nav_link3'>
                 PropTypes Example
+              </Link> */}
+              <Link to='/proptypes' className='nav_link3'>
+                PropTypes
               </Link>
               <Link to='/classnames' className='nav_link3'>
                 Classnames
@@ -401,8 +407,9 @@ function App() {
                   element={<ControlledCompoForm />}
                 />
                 <Route path='/helmet/*' element={<ReactHelmets />} />
-                <Route path='/propTypes' element={<PropCompo />} />
-                <Route path='/temp' element={<Temp />} />
+                {/* <Route path='/propTypes' element={<PropCompo />} />
+                <Route path='/temp' element={<Temp />} /> */}
+                <Route path='/proptypes' element={<PropTypes />} />
                 <Route path='/classnames' element={<ClassNames />} />
                 <Route path='/suspense' element={<SuspenseUserDetails />} />
                 <Route path='/demoSuspense' element={<DemoSuspense />} />
