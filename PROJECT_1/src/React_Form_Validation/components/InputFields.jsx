@@ -15,12 +15,122 @@ const InputFields = ({ items, setItems }) => {
     confirmPassword: '',
   })
 
-  console.log('ITEMS: ', items)
+  const [errors, setErrors] = useState({})
+
+  // console.log('ITEMS: ', items)
+
+  const nameValidation = () => {
+    const name = input.name.trim()
+    const pattern = /^[A-Za-z ]+$/
+    if (name === '') {
+      return '** name is required'
+    } else if (name.length < 2) {
+      return '** name must contain at least 2 containers'
+    } else if (!pattern.test(name)) {
+      return '** only text allowed'
+    }
+
+    return ''
+  }
+
+  const emailValidation = () => {
+    const email = input.email.trim()
+    const pattern = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/
+    if (email === '') {
+      return '** email is required'
+    } else if (!pattern.test(email)) {
+      return '** enter a valid email address'
+    }
+
+    return ''
+  }
+
+  const ageValidation = () => {
+    const age = input.age.trim()
+    if (age === '') {
+      return '** age is required'
+    } else if (isNaN(age)) {
+      return '** enter a valid age(number)'
+    } else if (age.length < 1 || age.length > 99) {
+      return '** enter a valid age'
+    }
+
+    return ''
+  }
+
+  const genderValidation = () => {
+    const gender = input.gender
+    if (!gender.checked) {
+      return '** select gender'
+    }
+
+    return ''
+  }
+
+  const passwordValidation = () => {
+    const password = input.password.trim()
+    const pattern =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&])[A-Za-z\d@.#$!%*?&]{8,15}$/
+    if(password === "") {
+      return '** password is required'
+    } else if(password.length < 8){
+      return '** password must have at least 8 characters'
+    }
+     else if(!pattern.test(password)) {
+      return '** password must contain at least one uppercase letter'
+    }
+
+  }
+
+  const matchPassword = () => {
+    if(!(input.password !== '' && input.confirmPassword !== '' && (input.password === input.confirmPassword))) {
+      return '** password does not match'
+    }
+  }
 
   const submitHandler = (e) => {
     e.preventDefault()
 
-    const updatedUsers = [...items, input]
+    const nameError = nameValidation()
+    if (nameError) {
+      setErrors({ name: nameError })
+    }
+
+    const emailError = emailValidation()
+    if (emailError) {
+      setErrors({ email: emailError })
+    }
+
+    const ageError = ageValidation()
+    if (ageError) {
+      setErrors({ age: ageError })
+    }
+
+    const genderError = genderValidation()
+    if (genderError) {
+      setErrors({ gender: genderError })
+    }
+
+    const passwordError = passwordValidation()
+    if(passwordError) {
+      setErrors({ password: passwordError })
+    }
+
+    const confirmPasswordError = passwordValidation()
+    if(confirmPasswordError) {
+      setErrors({ confirmPassword: confirmPasswordError })
+    }
+
+    const passwordMatchingError = matchPassword()
+    if(passwordMatchingError) {
+      setErrors({ passwordMatching: passwordMatchingError })
+    }
+
+    const newUser = {
+      id: Date.now(),
+      ...input,
+    }
+    const updatedUsers = [...items, newUser]
     localStorage.setItem('_USERS', JSON.stringify(updatedUsers))
     setItems(updatedUsers)
 
@@ -39,7 +149,20 @@ const InputFields = ({ items, setItems }) => {
       experience: '0',
       password: '',
       confirmPassword: '',
+      passwordMatching: ''
     })
+    // setErrors({
+    //   name: '',
+    //   email: '',
+    //   age: '',
+    //   gender: '',
+    //   skills: [],
+    //   role: '',
+    //   phone: '',
+    //   experience: '0',
+    //   password: '',
+    //   confirmPassword: '',
+    // })
   }
 
   const handleChange = (e) => {
@@ -77,6 +200,7 @@ const InputFields = ({ items, setItems }) => {
               placeholder='enter your name...'
               minLength={2}
             />
+            {errors.name && <p className='error'>{errors.name}</p>}
           </label>
           <label>
             Email:
@@ -87,6 +211,7 @@ const InputFields = ({ items, setItems }) => {
               onChange={handleChange}
               placeholder='enter your email...'
             />
+            {errors.email && <p className='error'>{errors.email}</p>}
           </label>
           <label>
             Age:
@@ -97,6 +222,7 @@ const InputFields = ({ items, setItems }) => {
               onChange={handleChange}
               placeholder='enter your age...'
             />
+            {errors.age && <p className='error'>{errors.age}</p>}
           </label>
           <div className='gender'>
             <label>Gender:</label>
@@ -120,6 +246,7 @@ const InputFields = ({ items, setItems }) => {
               />
               Female
             </label>
+            {errors.gender && <p className='error'>{errors.gender}</p>}
           </div>
 
           <div className='skills'>
@@ -191,6 +318,7 @@ const InputFields = ({ items, setItems }) => {
               onChange={handleChange}
               placeholder='enter your password...'
             />
+            {errors.password && <p className='error'>{errors.password}</p>}
           </label>
           <label>
             Confirm Password:
@@ -201,6 +329,7 @@ const InputFields = ({ items, setItems }) => {
               onChange={handleChange}
               placeholder='enter your password...'
             />
+            {errors.passwordMatching && <p className='error'>{errors.passwordMatching}</p>}
           </label>
 
           <div className='btn'>

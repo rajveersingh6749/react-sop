@@ -1,7 +1,7 @@
 import './List.css'
 
 const List = ({ items = [] }) => {
-  console.log('ITEMS: ', items)
+  // console.log('ITEMS: ', items)
 
   return (
     <div className='list'>
