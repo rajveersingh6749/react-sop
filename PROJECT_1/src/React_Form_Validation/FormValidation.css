@@ -1,6 +1,6 @@
 .app_container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
+    grid-template-columns: 500px 900px;
     gap: 40px;
     margin-top: 40px;
     /* background-color: rgb(3, 3, 41); */

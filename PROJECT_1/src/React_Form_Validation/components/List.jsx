@@ -13,6 +13,7 @@ const List = ({ items = [] }) => {
         <table>
           <thead>
             <tr>
+              <th>No.</th>
               <th>Name</th>
               <th>Email</th>
               <th>Age</th>
@@ -21,11 +22,13 @@ const List = ({ items = [] }) => {
               <th>Role</th>
               <th>Phone</th>
               <th>Exp</th>
+              {/* <th>Actions</th> */}
             </tr>
           </thead>
           <tbody>
             {items?.map((item, index) => (
               <tr key={index}>
+                <td>{index + 1}</td>
                 <td>{item.name}</td>
                 <td>{item.email}</td>
                 <td>{item.age}</td>
@@ -34,6 +37,10 @@ const List = ({ items = [] }) => {
                 <td>{item.role}</td>
                 <td>{item.phone}</td>
                 <td>{item.experience}</td>
+                {/* <td>
+                  <button onClick={() => handleEdit(item)}>Edit</button>
+                  <button onClick={() => handleDelete(item.id)}>Delete</button>
+                </td> */}
               </tr>
             ))}
           </tbody>

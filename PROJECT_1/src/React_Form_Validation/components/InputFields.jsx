@@ -33,11 +33,16 @@ const InputFields = ({ items, setItems }) => {
     }
 
     const email = input.email.trim()
+    const isFound = items.some((item) => {
+      return item.email.toLowerCase() === input.email.toLowerCase()
+    })
     const emailPattern = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/
     if (email === '') {
       newErrors.email = '** Email is Required'
     } else if (!emailPattern.test(email)) {
       newErrors.email = '** Enter a valid email address'
+    } else if (isFound) {
+      newErrors.email = '** Email already exits'
     }
 
     const age = input.age.trim()
@@ -64,6 +69,10 @@ const InputFields = ({ items, setItems }) => {
       newErrors.phone = '** Phone Number is Required'
     } else if (!phonePattern.test(input.phone)) {
       newErrors.phone = '** Phone No. must be 10 digits'
+    }
+
+    if (Number(input.experience) > 10) {
+      newErrors.experience = '** experience must be less than 10 yrs'
     }
 
     const passwordPattern =
@@ -155,7 +164,6 @@ const InputFields = ({ items, setItems }) => {
               value={input.name}
               onChange={handleChange}
               placeholder='enter your name...'
-              minLength={2}
             />
             {errors.name && <p className='error'>{errors.name}</p>}
           </label>
@@ -283,7 +291,7 @@ const InputFields = ({ items, setItems }) => {
           <label>
             Password:
             <input
-              type='text'
+              type='password'
               name='password'
               value={input.password}
               onChange={handleChange}
@@ -291,11 +299,11 @@ const InputFields = ({ items, setItems }) => {
             />
             {errors.password && <p className='error'>{errors.password}</p>}
           </label>
-          
+
           <label>
             Confirm Password:
             <input
-              type='text'
+              type='password'
               name='confirmPassword'
               value={input.confirmPassword}
               onChange={handleChange}

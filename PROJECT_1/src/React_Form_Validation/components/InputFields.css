@@ -59,7 +59,7 @@ form {
   align-items: center;
 }
 
-button {
+.btn button {
   border: none;
   padding: 8px 12px;
   background: blueviolet;
@@ -83,6 +83,7 @@ input {
   padding: 10px;
   border-radius: 6px;
   background: #334155;
+  /* color: white; */
   width: 80%;
 }
 
