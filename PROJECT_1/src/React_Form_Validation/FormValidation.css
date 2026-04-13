@@ -3,7 +3,7 @@
     grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
     gap: 40px;
     margin-top: 40px;
-    background-color: rgb(3, 3, 41);
+    /* background-color: rgb(3, 3, 41); */
     height: 100vh;
 }
 

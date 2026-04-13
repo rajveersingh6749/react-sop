@@ -19,111 +19,79 @@ const InputFields = ({ items, setItems }) => {
 
   // console.log('ITEMS: ', items)
 
-  const nameValidation = () => {
+  const validate = () => {
+    const newErrors = {}
+
     const name = input.name.trim()
     const pattern = /^[A-Za-z ]+$/
-    if (name === '') {
-      return '** name is required'
+    if (!name) {
+      newErrors.name = '** Name is Required'
     } else if (name.length < 2) {
-      return '** name must contain at least 2 containers'
+      newErrors.name = '** Name must be at least 2 containers'
     } else if (!pattern.test(name)) {
-      return '** only text allowed'
+      newErrors.name = '** Only alphabets are allowed'
     }
 
-    return ''
-  }
-
-  const emailValidation = () => {
     const email = input.email.trim()
-    const pattern = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/
     if (email === '') {
-      return '** email is required'
-    } else if (!pattern.test(email)) {
-      return '** enter a valid email address'
+      newErrors.email = '** Email is Required'
+    } else if (!emailPattern.test(email)) {
+      newErrors.email = '** Enter a valid email address'
     }
 
-    return ''
-  }
-
-  const ageValidation = () => {
     const age = input.age.trim()
     if (age === '') {
-      return '** age is required'
-    } else if (isNaN(age)) {
-      return '** enter a valid age(number)'
-    } else if (age.length < 1 || age.length > 99) {
-      return '** enter a valid age'
+      newErrors.age = '** Age is Required'
+    } else if (Number(age) < 1 || Number(age) > 99) {
+      newErrors.age = '** Age must be between 1 to 100'
     }
 
-    return ''
-  }
-
-  const genderValidation = () => {
-    const gender = input.gender
-    if (!gender.checked) {
-      return '** select gender'
+    if (!input.gender) {
+      newErrors.gender = '** Select your gender'
     }
 
-    return ''
-  }
+    if (input.skills.length === 0) {
+      newErrors.skills = '** Select your skills'
+    }
 
-  const passwordValidation = () => {
-    const password = input.password.trim()
-    const pattern =
+    if (!input.role) {
+      newErrors.role = '** Select your role'
+    }
+
+    const phonePattern = /^[6-9]\d{9}$/
+    if (!input.phone) {
+      newErrors.phone = '** Phone Number is Required'
+    } else if (!phonePattern.test(input.phone)) {
+      newErrors.phone = '** Phone No. must be 10 digits'
+    }
+
+    const passwordPattern =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&])[A-Za-z\d@.#$!%*?&]{8,15}$/
-    if(password === "") {
-      return '** password is required'
-    } else if(password.length < 8){
-      return '** password must have at least 8 characters'
-    }
-     else if(!pattern.test(password)) {
-      return '** password must contain at least one uppercase letter'
+    if (!input.password.trim()) {
+      newErrors.password = '** Password is Required'
+    } else if (!passwordPattern.test(input.password)) {
+      newErrors.password =
+        '** Password must contain at least 1 Uppercase letter'
     }
 
-  }
-
-  const matchPassword = () => {
-    if(!(input.password !== '' && input.confirmPassword !== '' && (input.password === input.confirmPassword))) {
-      return '** password does not match'
+    if (!input.confirmPassword) {
+      newErrors.confirmPassword = '** Confirm your password'
+    } else if (input.password.trim() !== input.confirmPassword.trim()) {
+      newErrors.confirmPassword = `Passwords don't match`
     }
+
+    return newErrors
   }
 
   const submitHandler = (e) => {
     e.preventDefault()
 
-    const nameError = nameValidation()
-    if (nameError) {
-      setErrors({ name: nameError })
-    }
+    const validationErrors = validate()
 
-    const emailError = emailValidation()
-    if (emailError) {
-      setErrors({ email: emailError })
-    }
-
-    const ageError = ageValidation()
-    if (ageError) {
-      setErrors({ age: ageError })
-    }
-
-    const genderError = genderValidation()
-    if (genderError) {
-      setErrors({ gender: genderError })
-    }
-
-    const passwordError = passwordValidation()
-    if(passwordError) {
-      setErrors({ password: passwordError })
-    }
-
-    const confirmPasswordError = passwordValidation()
-    if(confirmPasswordError) {
-      setErrors({ confirmPassword: confirmPasswordError })
-    }
-
-    const passwordMatchingError = matchPassword()
-    if(passwordMatchingError) {
-      setErrors({ passwordMatching: passwordMatchingError })
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors)
+      return
     }
 
     const newUser = {
@@ -134,6 +102,7 @@ const InputFields = ({ items, setItems }) => {
     localStorage.setItem('_USERS', JSON.stringify(updatedUsers))
     setItems(updatedUsers)
 
+    setErrors({})
     resetForm()
   }
 
@@ -149,20 +118,7 @@ const InputFields = ({ items, setItems }) => {
       experience: '0',
       password: '',
       confirmPassword: '',
-      passwordMatching: ''
     })
-    // setErrors({
-    //   name: '',
-    //   email: '',
-    //   age: '',
-    //   gender: '',
-    //   skills: [],
-    //   role: '',
-    //   phone: '',
-    //   experience: '0',
-    //   password: '',
-    //   confirmPassword: '',
-    // })
   }
 
   const handleChange = (e) => {
@@ -189,6 +145,7 @@ const InputFields = ({ items, setItems }) => {
     <div className='main_container'>
       <div className='form_container'>
         <h2>Sign Up</h2>
+
         <form onSubmit={submitHandler}>
           <label>
             Name:
@@ -202,6 +159,7 @@ const InputFields = ({ items, setItems }) => {
             />
             {errors.name && <p className='error'>{errors.name}</p>}
           </label>
+
           <label>
             Email:
             <input
@@ -213,6 +171,7 @@ const InputFields = ({ items, setItems }) => {
             />
             {errors.email && <p className='error'>{errors.email}</p>}
           </label>
+
           <label>
             Age:
             <input
@@ -224,6 +183,7 @@ const InputFields = ({ items, setItems }) => {
             />
             {errors.age && <p className='error'>{errors.age}</p>}
           </label>
+
           <div className='gender'>
             <label>Gender:</label>
             <label>
@@ -236,6 +196,7 @@ const InputFields = ({ items, setItems }) => {
               />
               Male
             </label>
+
             <label>
               <input
                 type='radio'
@@ -251,6 +212,7 @@ const InputFields = ({ items, setItems }) => {
 
           <div className='skills'>
             <label>Skills:</label>
+
             <label>
               <input
                 type='checkbox'
@@ -260,6 +222,7 @@ const InputFields = ({ items, setItems }) => {
               />
               HTML
             </label>
+
             <label>
               <input
                 type='checkbox'
@@ -269,6 +232,7 @@ const InputFields = ({ items, setItems }) => {
               />
               CSS
             </label>
+
             <label>
               <input
                 type='checkbox'
@@ -278,7 +242,9 @@ const InputFields = ({ items, setItems }) => {
               />
               JS
             </label>
+            {errors.skills && <p className='error'>{errors.skills}</p>}
           </div>
+
           <label>Role:</label>
           <select name='role' value={input.role} onChange={handleChange}>
             <option value='' disabled>
@@ -288,6 +254,7 @@ const InputFields = ({ items, setItems }) => {
             <option value='backend'>Backend</option>
             <option value='fullstack'>Fullstack</option>
           </select>
+          {errors.role && <p className='error'>{errors.role}</p>}
 
           <label>
             Phone:
@@ -298,7 +265,9 @@ const InputFields = ({ items, setItems }) => {
               onChange={handleChange}
               placeholder='enter your phone number...'
             />
+            {errors.phone && <p className='error'>{errors.phone}</p>}
           </label>
+
           <label>
             Experience:
             <input
@@ -308,11 +277,13 @@ const InputFields = ({ items, setItems }) => {
               onChange={handleChange}
             />
             <span>{input.experience}</span>
+            {errors.experience && <p className='error'>{errors.experience}</p>}
           </label>
+
           <label>
             Password:
             <input
-              type='password'
+              type='text'
               name='password'
               value={input.password}
               onChange={handleChange}
@@ -320,16 +291,19 @@ const InputFields = ({ items, setItems }) => {
             />
             {errors.password && <p className='error'>{errors.password}</p>}
           </label>
+          
           <label>
             Confirm Password:
             <input
-              type='password'
+              type='text'
               name='confirmPassword'
               value={input.confirmPassword}
               onChange={handleChange}
               placeholder='enter your password...'
             />
-            {errors.passwordMatching && <p className='error'>{errors.passwordMatching}</p>}
+            {errors.confirmPassword && (
+              <p className='error'>{errors.confirmPassword}</p>
+            )}
           </label>
 
           <div className='btn'>
