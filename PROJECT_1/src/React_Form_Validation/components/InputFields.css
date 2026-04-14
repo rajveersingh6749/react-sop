@@ -9,7 +9,7 @@ body {
 .form_container {
   background: #1e293b;
   width: 500px;
-  height: 600px;
+  height: 620px;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -62,7 +62,7 @@ form {
 .btn button {
   border: none;
   padding: 8px 12px;
-  background: blueviolet;
+  background: #673397;
   color: white;
   font-weight: bold;
   cursor: pointer;
@@ -85,10 +85,23 @@ input {
   background: #334155;
   /* color: white; */
   width: 80%;
+  color: beige;
+}
+
+select {
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 6px;
+  background: #334155;
+  /* color: white; */
+  width: 50%;
+  color: beige;
 }
 
 input:focus {
   border: 1px solid #38bdf8;
+  color: beige;
 }
 
 input[type='range'] {

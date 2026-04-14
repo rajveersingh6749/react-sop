@@ -1,6 +1,6 @@
 export const defaultUsers = [
   {
-    id: Date.now(),
+    id: 1,
     name: 'John Doe',
     email: 'john@gmail.com',
     gender: 'male',
@@ -11,7 +11,7 @@ export const defaultUsers = [
     age: 25,
   },
   {
-    id: Date.now(),
+    id: 2,
     name: 'Jane Smith',
     email: 'jane@gmail.com',
     gender: 'female',
@@ -22,7 +22,7 @@ export const defaultUsers = [
     age: 28,
   },
   {
-    id: Date.now(),
+    id: 3,
     name: 'Alex',
     email: 'alex@gmail.com',
     gender: 'male',

@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './InputFields.css'
 
-const InputFields = ({ items, setItems }) => {
+const InputFields = ({ items, setItems, editUser, setEditUser }) => {
   const [input, setInput] = useState({
     name: '',
     email: '',
@@ -16,8 +16,36 @@ const InputFields = ({ items, setItems }) => {
   })
 
   const [errors, setErrors] = useState({})
+  // const [isDisabled, setDisabled] = useState(false)
 
-  // console.log('ITEMS: ', items)
+  useEffect(() => {
+    if (editUser) {
+      setInput(editUser)
+    }
+  }, [editUser])
+
+  useEffect(() => {
+    if (
+      editUser &&
+      (input.name !== editUser.name ||
+        input.email !== editUser.email ||
+        input.age !== editUser.age ||
+        input.gender !== editUser.gender ||
+        input.skills !== editUser.skills ||
+        input.role !== editUser.role ||
+        input.phone !== editUser.phone ||
+        input.experience !== editUser.experience)
+    ) {
+      const handleReload = (e) => {
+        e.preventDefault()
+      }
+
+      window.addEventListener('beforeunload', handleReload)
+      return () => {
+        window.removeEventListener('beforeunload', handleReload)
+      }
+    }
+  }, [editUser, input])
 
   const validate = () => {
     const newErrors = {}
@@ -41,11 +69,11 @@ const InputFields = ({ items, setItems }) => {
       newErrors.email = '** Email is Required'
     } else if (!emailPattern.test(email)) {
       newErrors.email = '** Enter a valid email address'
-    } else if (isFound) {
+    } else if (!editUser && isFound) {
       newErrors.email = '** Email already exits'
     }
 
-    const age = input.age.trim()
+    const age = input.age
     if (age === '') {
       newErrors.age = '** Age is Required'
     } else if (Number(age) < 1 || Number(age) > 99) {
@@ -67,12 +95,14 @@ const InputFields = ({ items, setItems }) => {
     const phonePattern = /^[6-9]\d{9}$/
     if (!input.phone) {
       newErrors.phone = '** Phone Number is Required'
-    } else if (!phonePattern.test(input.phone)) {
+    } else if (input.phone.length < 10 || input.phone.length > 10) {
       newErrors.phone = '** Phone No. must be 10 digits'
+    } else if (!phonePattern.test(input.phone)) {
+      newErrors.phone = '** Enter a valid number'
     }
 
     if (Number(input.experience) > 10) {
-      newErrors.experience = '** experience must be less than 10 yrs'
+      newErrors.experience = '** maximum 10 years of experience is allowed'
     }
 
     const passwordPattern =
@@ -81,13 +111,13 @@ const InputFields = ({ items, setItems }) => {
       newErrors.password = '** Password is Required'
     } else if (!passwordPattern.test(input.password)) {
       newErrors.password =
-        '** Password must contain at least 1 Uppercase letter'
+        '** Password must be a combination of uppercase, lowercase, digits and spacial characters'
     }
 
     if (!input.confirmPassword) {
       newErrors.confirmPassword = '** Confirm your password'
     } else if (input.password.trim() !== input.confirmPassword.trim()) {
-      newErrors.confirmPassword = `Passwords don't match`
+      newErrors.confirmPassword = `** Passwords don't match`
     }
 
     return newErrors
@@ -99,18 +129,29 @@ const InputFields = ({ items, setItems }) => {
     const validationErrors = validate()
 
     if (Object.keys(validationErrors).length > 0) {
+      // setDisabled(true)
       setErrors(validationErrors)
       return
     }
 
-    const newUser = {
-      id: Date.now(),
-      ...input,
+    // setDisabled(false)
+    let updatedUsers
+    if (editUser) {
+      updatedUsers = items.map((item) =>
+        item.id === editUser.id ? { ...input, id: editUser.id } : item,
+      )
+    } else {
+      const newUser = {
+        id: Date.now(),
+        ...input,
+      }
+      updatedUsers = [...items, newUser]
     }
-    const updatedUsers = [...items, newUser]
+
     localStorage.setItem('_USERS', JSON.stringify(updatedUsers))
     setItems(updatedUsers)
 
+    setEditUser(null)
     setErrors({})
     resetForm()
   }
@@ -250,6 +291,16 @@ const InputFields = ({ items, setItems }) => {
               />
               JS
             </label>
+
+            <label>
+              <input
+                type='checkbox'
+                value='React'
+                checked={input.skills.includes('React')}
+                onChange={handleSkills}
+              />
+              React
+            </label>
             {errors.skills && <p className='error'>{errors.skills}</p>}
           </div>
 
@@ -261,6 +312,7 @@ const InputFields = ({ items, setItems }) => {
             <option value='frontend'>Frontend</option>
             <option value='backend'>Backend</option>
             <option value='fullstack'>Fullstack</option>
+            <option value='react'>React</option>
           </select>
           {errors.role && <p className='error'>{errors.role}</p>}
 
@@ -315,7 +367,7 @@ const InputFields = ({ items, setItems }) => {
           </label>
 
           <div className='btn'>
-            <button type='submit'>Submit</button>
+            <button type='submit'>{editUser ? 'Update' : 'Submit'}</button>
           </div>
         </form>
       </div>

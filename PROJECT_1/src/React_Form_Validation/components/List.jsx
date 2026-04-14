@@ -1,8 +1,6 @@
 import './List.css'
 
-const List = ({ items = [] }) => {
-  // console.log('ITEMS: ', items)
-
+const List = ({ items = [], handleEdit, handleDelete }) => {
   return (
     <div className='list'>
       <h2>Users</h2>
@@ -22,12 +20,12 @@ const List = ({ items = [] }) => {
               <th>Role</th>
               <th>Phone</th>
               <th>Exp</th>
-              {/* <th>Actions</th> */}
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
             {items?.map((item, index) => (
-              <tr key={index}>
+              <tr key={item.id}>
                 <td>{index + 1}</td>
                 <td>{item.name}</td>
                 <td>{item.email}</td>
@@ -37,10 +35,20 @@ const List = ({ items = [] }) => {
                 <td>{item.role}</td>
                 <td>{item.phone}</td>
                 <td>{item.experience}</td>
-                {/* <td>
-                  <button onClick={() => handleEdit(item)}>Edit</button>
-                  <button onClick={() => handleDelete(item.id)}>Delete</button>
-                </td> */}
+                <td className='actions_btns'>
+                  <button
+                    onClick={() => handleEdit(item)}
+                    className='action_btn'
+                  >
+                    Edit
+                  </button>
+                  <button
+                    onClick={() => handleDelete(item.id)}
+                    className='action_btn delete_btn'
+                  >
+                    Delete
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>
