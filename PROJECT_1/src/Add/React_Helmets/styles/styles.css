@@ -7,12 +7,12 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: green;
-  padding: 10px 22px;
+  background-color: blueviolet;
+  padding: 20px 0;
   display: flex;
   justify-content: center;
   gap: 40px;
-  border-radius: 10px;
+  /* border-radius: 10px; */
 }
 
 .helmet_nav_link {
@@ -32,7 +32,7 @@
 }
 
 .product_list_item {
-  background-color: white;
+  background: #1e293b;
   border: 1px solid gray;
   border-radius: 10px;
   padding: 20px;
@@ -46,10 +46,12 @@
 
 .product_link h2 {
   margin-bottom: 5px;
+  color: beige;
 }
 
 .product_link p {
   font-size: 18px;
+  color: aqua;
 }
 
 .product_details_container {

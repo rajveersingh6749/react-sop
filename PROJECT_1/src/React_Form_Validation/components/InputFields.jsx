@@ -16,14 +16,19 @@ const InputFields = ({ items, setItems, editUser, setEditUser }) => {
   })
 
   const [errors, setErrors] = useState({})
-  // const [isDisabled, setDisabled] = useState(false)
 
+  // If edit button gets clicked form is filled with the details and let the password and confirm password keep empty.
   useEffect(() => {
     if (editUser) {
-      setInput(editUser)
+      setInput({
+        ...editUser,
+        password: '',
+        confirmPassword: '',
+      })
     }
   }, [editUser])
 
+  // Prevent page from getting refreshed if any changes are made during editing otherwise let it be refreshed.
   useEffect(() => {
     if (
       editUser &&
@@ -31,7 +36,7 @@ const InputFields = ({ items, setItems, editUser, setEditUser }) => {
         input.email !== editUser.email ||
         input.age !== editUser.age ||
         input.gender !== editUser.gender ||
-        input.skills !== editUser.skills ||
+        JSON.stringify(input.skills) !== JSON.stringify(editUser.skills) ||
         input.role !== editUser.role ||
         input.phone !== editUser.phone ||
         input.experience !== editUser.experience)
@@ -47,6 +52,7 @@ const InputFields = ({ items, setItems, editUser, setEditUser }) => {
     }
   }, [editUser, input])
 
+  // Validate all the fields
   const validate = () => {
     const newErrors = {}
 
@@ -55,11 +61,12 @@ const InputFields = ({ items, setItems, editUser, setEditUser }) => {
     if (!name) {
       newErrors.name = '** Name is Required'
     } else if (name.length < 2) {
-      newErrors.name = '** Name must be at least 2 containers'
+      newErrors.name = '** Name must be at least 2 characters'
     } else if (!pattern.test(name)) {
       newErrors.name = '** Only alphabets are allowed'
     }
 
+    // check weather the entry with current email already exists
     const email = input.email.trim()
     const isFound = items.some((item) => {
       return item.email.toLowerCase() === input.email.toLowerCase()
@@ -128,13 +135,12 @@ const InputFields = ({ items, setItems, editUser, setEditUser }) => {
 
     const validationErrors = validate()
 
+    // If any error occur stop form from being submitted
     if (Object.keys(validationErrors).length > 0) {
-      // setDisabled(true)
       setErrors(validationErrors)
       return
     }
 
-    // setDisabled(false)
     let updatedUsers
     if (editUser) {
       updatedUsers = items.map((item) =>
@@ -155,6 +161,14 @@ const InputFields = ({ items, setItems, editUser, setEditUser }) => {
     setErrors({})
     resetForm()
   }
+
+  // If form is empty, disable submit button
+  const isFormEmpty = Object.values(input).every(
+    (val) =>
+      val === '' || val === '0' || (Array.isArray(val) && val.length === 0),
+  )
+
+  // const isFormValid = Object.keys(validate()).length === 0
 
   const resetForm = () => {
     setInput({
@@ -367,7 +381,9 @@ const InputFields = ({ items, setItems, editUser, setEditUser }) => {
           </label>
 
           <div className='btn'>
-            <button type='submit'>{editUser ? 'Update' : 'Submit'}</button>
+            <button type='submit' disabled={isFormEmpty}>
+              {editUser ? 'Update' : 'Submit'}
+            </button>
           </div>
         </form>
       </div>
