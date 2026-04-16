@@ -8,7 +8,7 @@ export const defaultUsers = [
     role: 'frontend',
     phone: '9999999999',
     experience: '2',
-    age: 25,
+    age: '25',
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ export const defaultUsers = [
     role: 'backend',
     phone: '8888888888',
     experience: '3',
-    age: 28,
+    age: '28',
   },
   {
     id: 3,
@@ -30,6 +30,6 @@ export const defaultUsers = [
     role: 'fullstack',
     phone: '7777777777',
     experience: '1',
-    age: 22,
+    age: '22',
   },
 ]

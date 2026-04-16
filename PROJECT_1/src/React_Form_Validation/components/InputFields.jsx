@@ -17,7 +17,7 @@ const InputFields = ({ items, setItems, editUser, setEditUser }) => {
 
   const [errors, setErrors] = useState({})
 
-  // If edit button gets clicked form is filled with the details and let the password and confirm password keep empty.
+  // If edit button gets clicked form is filled with the details and let the password and confirm password be empty.
   useEffect(() => {
     if (editUser) {
       setInput({
@@ -32,18 +32,20 @@ const InputFields = ({ items, setItems, editUser, setEditUser }) => {
   useEffect(() => {
     if (
       editUser &&
-      (input.name !== editUser.name ||
+      (input.name.trim() !== editUser.name.trim() ||
         input.email !== editUser.email ||
         input.age !== editUser.age ||
         input.gender !== editUser.gender ||
         JSON.stringify(input.skills) !== JSON.stringify(editUser.skills) ||
         input.role !== editUser.role ||
-        input.phone !== editUser.phone ||
+        input.phone.trim() !== editUser.phone.trim() ||
         input.experience !== editUser.experience)
     ) {
       const handleReload = (e) => {
         e.preventDefault()
       }
+      // console.log('Input Age: ', typeof input.age)
+      // console.log('EditUser Age: ', typeof editUser.age)
 
       window.addEventListener('beforeunload', handleReload)
       return () => {
@@ -66,7 +68,7 @@ const InputFields = ({ items, setItems, editUser, setEditUser }) => {
       newErrors.name = '** Only alphabets are allowed'
     }
 
-    // check weather the entry with current email already exists
+    // Check whether the entry with current email already exists
     const email = input.email.trim()
     const isFound = items.some((item) => {
       return item.email.toLowerCase() === input.email.toLowerCase()
@@ -109,19 +111,21 @@ const InputFields = ({ items, setItems, editUser, setEditUser }) => {
     }
 
     if (Number(input.experience) > 10) {
-      newErrors.experience = '** maximum 10 years of experience is allowed'
+      newErrors.experience = '** Maximum 10 years of experience is allowed'
     }
 
     const passwordPattern =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&])[A-Za-z\d@.#$!%*?&]{8,15}$/
     if (!input.password.trim()) {
       newErrors.password = '** Password is Required'
-    } else if (!passwordPattern.test(input.password)) {
+    } else if (input.password.trim().length < 8) {
+      newErrors.password = '** Password must be at least 8 characters'
+    } else if (!passwordPattern.test(input.password.trim())) {
       newErrors.password =
         '** Password must be a combination of uppercase, lowercase, digits and spacial characters'
     }
 
-    if (!input.confirmPassword) {
+    if (!input.confirmPassword.trim()) {
       newErrors.confirmPassword = '** Confirm your password'
     } else if (input.password.trim() !== input.confirmPassword.trim()) {
       newErrors.confirmPassword = `** Passwords don't match`
@@ -168,6 +172,7 @@ const InputFields = ({ items, setItems, editUser, setEditUser }) => {
       val === '' || val === '0' || (Array.isArray(val) && val.length === 0),
   )
 
+  // Check Whether the form is valid.
   // const isFormValid = Object.keys(validate()).length === 0
 
   const resetForm = () => {

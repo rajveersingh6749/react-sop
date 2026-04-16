@@ -22,7 +22,7 @@ table {
 
 th,
 td {
-  border: 1px solid gray;
+  border-bottom: 1px solid gray;
   text-align: center;
   overflow-wrap: break-word;
   margin: 0;
