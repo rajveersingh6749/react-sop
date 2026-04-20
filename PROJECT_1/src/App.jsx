@@ -125,6 +125,7 @@ const HOC = lazy(() => import('./Add/HOC/HigherOrderComponent.jsx'))
 const FormValidation = lazy(
   () => import('./React_Form_Validation/FormValidation.jsx'),
 )
+const Redux = lazy(() => import('./Redux/ReduxApp.jsx'))
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -296,6 +297,9 @@ function App() {
               <Link to='/formvalidation' className='nav_link3'>
                 React Form Validation
               </Link>
+              <Link to='/redux' className='nav_link3'>
+                Redux
+              </Link>
             </nav>
           </div>
 
@@ -409,6 +413,7 @@ function App() {
                 <Route path='/errorBoundary' element={<ErrorBoundary />} />
                 <Route path='/hoc' element={<HOC />} />
                 <Route path='/formvalidation' element={<FormValidation />} />
+                <Route path='/redux' element={<Redux />} />
 
                 <Route path='*' element={<NotFound />} />
               </Routes>
