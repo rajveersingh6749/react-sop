@@ -1,0 +1,26 @@
+.input_container {
+    border: 1px solid gray;
+    width: 600px;
+    height: 600px;
+    background-color: rgb(23, 23, 43);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+input {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+    padding: 6px 10px;
+    background-color: beige;
+    border: none;
+    border-radius: 5px;
+    margin-left: 5px;
+}
