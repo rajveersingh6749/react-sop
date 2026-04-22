@@ -12,3 +12,21 @@ export const updateTodo = (id, text) => ({
   type: 'UPDATE_TODO',
   payload: { id, text },
 })
+
+export const toggleTodo = (id) => ({
+  type: 'TOGGLE_TODO',
+  payload: id,
+})
+
+export const setFilter = (filter) => ({
+  type: 'SET_FILTER',
+  payload: filter,
+})
+
+export const clearAllTodos = () => ({
+  type: 'CLEAR_ALL_TODOS',
+})
+
+export const clearCompletedTodos = () => ({
+  type: 'CLEAR_COMPLETED_TODOS',
+})

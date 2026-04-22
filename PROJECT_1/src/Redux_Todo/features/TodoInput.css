@@ -1,10 +1,59 @@
+.parent_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.parent_container h1 {
+  background-color: blueviolet;
+  width: 100%;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: rgb(34, 26, 26);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-style: italic;
+  font-weight: 800;
+}
+
+.parent_container h1 span {
+  font-size: 20px;
+  margin-left: 10px;
+  color: beige;
+}
+
 .input_container {
-    border: 1px solid gray;
-    width: 600px;
-    height: 600px;
-    background-color: rgb(23, 23, 43);
-    border-radius: 10px;
-    padding: 20px;
+  border: 1px solid gray;
+  width: 900px;
+  height: 400px;
+  background-color: rgb(23, 23, 43);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main_container {
+  display: flex;
+  gap: 40px;
+}
+
+.filter_container {
+  border: 1px solid gray;
+  width: 1000px;
+  height: 400px;
+  background-color: rgb(23, 23, 43);
+  border-radius: 10px;
+  padding: 20px;
 }
 
 input {
@@ -18,9 +67,19 @@ input:focus {
 }
 
 button {
-    padding: 6px 10px;
-    background-color: beige;
-    border: none;
-    border-radius: 5px;
-    margin-left: 5px;
+  padding: 6px 10px;
+  background-color: beige;
+  border: none;
+  border-radius: 5px;
+  margin-left: 8px;
+  width: 80px;
+}
+
+.lg_btn {
+  width: 122px;
+}
+
+button:hover {
+  background-color: rgb(221, 221, 195);
+  cursor: pointer;
 }

@@ -1,5 +1,6 @@
 const initialState = {
   todos: [],
+  filters: 'ALL',
 }
 
 export const reducer = (state = initialState, action) => {
@@ -7,7 +8,10 @@ export const reducer = (state = initialState, action) => {
     case 'ADD_TODO':
       return {
         ...state,
-        todos: [...state.todos, { id: Date.now(), text: action.payload }],
+        todos: [
+          ...state.todos,
+          { id: Date.now(), text: action.payload, completed: false },
+        ],
       }
 
     case 'DELETE_TODO':
@@ -24,6 +28,34 @@ export const reducer = (state = initialState, action) => {
             ? { ...todo, text: action.payload.text }
             : todo,
         ),
+      }
+
+    case 'TOGGLE_TODO':
+      return {
+        ...state,
+        todos: state.todos.map((todo) =>
+          todo.id === action.payload
+            ? { ...todo, completed: !todo.completed }
+            : todo,
+        ),
+      }
+
+    case 'SET_FILTER':
+      return {
+        ...state,
+        filters: action.payload,
+      }
+
+    case 'CLEAR_ALL_TODOS':
+      return {
+        ...state,
+        todos: [],
+      }
+
+    case 'CLEAR_COMPLETED_TODOS':
+      return {
+        ...state,
+        todos: state.todos.filter((todo) => !todo.completed),
       }
 
     default:

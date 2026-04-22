@@ -1,8 +1,7 @@
 .todo_app {
-    display: flex;
-    justify-content: center;
-    /* align-items: center;
-    height: 450px;
-    width: 500px;
-    border: 1px solid gray; */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
+
