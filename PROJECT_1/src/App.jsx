@@ -128,6 +128,7 @@ const FormValidation = lazy(
 const ReduxToolKit = lazy(() => import('./ReduxToolKit/ReduxApp.jsx'))
 const Redux = lazy(() => import('./Redux/Redux.jsx'))
 const Redux_Todo = lazy(() => import('./Redux_Todo/Redux_Todo.jsx'))
+const AuthCompo = lazy(() => import('./Authentication_System/AuthCompo.jsx'))
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -308,6 +309,10 @@ function App() {
               <Link to='/redux_todo' className='nav_link3'>
                 Redux_Todo
               </Link>
+
+              <Link to='/auth' className='nav_link3'>
+                Authentication System
+              </Link>
             </nav>
           </div>
 
@@ -424,6 +429,7 @@ function App() {
                 <Route path='/redux_toolkit' element={<ReduxToolKit />} />
                 <Route path='/redux' element={<Redux />} />
                 <Route path='/redux_todo' element={<Redux_Todo />} />
+                <Route path='/auth' element={<AuthCompo />} />
 
                 <Route path='*' element={<NotFound />} />
               </Routes>
