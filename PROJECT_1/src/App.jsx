@@ -129,6 +129,7 @@ const ReduxToolKit = lazy(() => import('./ReduxToolKit/ReduxApp.jsx'))
 const Redux = lazy(() => import('./Redux/Redux.jsx'))
 const Redux_Todo = lazy(() => import('./Redux_Todo/Redux_Todo.jsx'))
 const AuthCompo = lazy(() => import('./Authentication_System/AuthCompo.jsx'))
+const Notes = lazy(() => import('./Notes_App_RTK/Notes.jsx'))
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -142,23 +143,23 @@ function App() {
               <Link to='/' className='nav_link3'>
                 Home
               </Link>
-              <Link to='/componentbasedui' className='nav_link3'>
+              <Link to='/component_based_ui' className='nav_link3'>
                 Module1 Demo1: Component Based UI
               </Link>
-              <Link to='/embeddingexpressions' className='nav_link3'>
+              <Link to='/embedding_expressions' className='nav_link3'>
                 Module1 Demo2: JSX, Embedding Expressions, class vs className
                 and Self-Closing Tags
               </Link>
               <Link to='/props' className='nav_link3'>
                 Module1 Demo3: Props, PropTypes, Default Props
               </Link>
-              <Link to='/reactelementsvsdomelements' className='nav_link3'>
+              <Link to='/react_elements_vs_dom_elements' className='nav_link3'>
                 Module1 Demo4: React Elements vs DOM Elements
               </Link>
-              <Link to='/productcard' className='nav_link3'>
+              <Link to='/product_card' className='nav_link3'>
                 Milestone Task: Product Card
               </Link>
-              <Link to='/usestatehook' className='nav_link3'>
+              <Link to='/use_state_hook' className='nav_link3'>
                 Module2 Demo1: UseState Hook Managing Local Component State
               </Link>
               <Link to='/module2' className='nav_link3'>
@@ -279,7 +280,7 @@ function App() {
               <Link to='/helmet' className='nav_link3'>
                 React Helmets
               </Link>
-              <Link to='/proptypes' className='nav_link3'>
+              <Link to='/prop_types' className='nav_link3'>
                 PropTypes
               </Link>
               <Link to='/classnames' className='nav_link3'>
@@ -297,7 +298,7 @@ function App() {
               <Link to='/hoc' className='nav_link3'>
                 HOC
               </Link>
-              <Link to='/formvalidation' className='nav_link3'>
+              <Link to='/form_validation' className='nav_link3'>
                 React Form Validation
               </Link>
               <Link to='/redux_toolkit' className='nav_link3'>
@@ -309,9 +310,11 @@ function App() {
               <Link to='/redux_todo' className='nav_link3'>
                 Redux_Todo
               </Link>
-
               <Link to='/auth' className='nav_link3'>
                 Authentication System
+              </Link>
+              <Link to='/notes' className='nav_link3'>
+                Notes App
               </Link>
             </nav>
           </div>
@@ -321,20 +324,20 @@ function App() {
               <Routes>
                 <Route path='/' element={<Home />} />
                 <Route
-                  path='/componentbasedui'
+                  path='/component_based_ui'
                   element={<ComponentBasedUI />}
                 />
                 <Route
-                  path='/embeddingexpressions'
+                  path='/embedding_expressions'
                   element={<EmbeddingExpressions />}
                 />
                 <Route path='/props' element={<Props />} />
                 <Route
-                  path='/reactelementsvsdomelements'
+                  path='/react_elements_vs_dom_elements'
                   element={<ReactElementsVsDomElements />}
                 />
-                <Route path='/productcard' element={<ProductCard />} />
-                <Route path='/usestatehook' element={<UseStateHook />} />
+                <Route path='/product_card' element={<ProductCard />} />
+                <Route path='/use_state_hook' element={<UseStateHook />} />
                 <Route path='/module2' element={<MyForm />} />
                 <Route path='/milestone2' element={<Counter />} />
                 <Route path='/module3' element={<Task3 />} />
@@ -419,17 +422,18 @@ function App() {
                   element={<ControlledCompoForm />}
                 />
                 <Route path='/helmet/*' element={<ReactHelmets />} />
-                <Route path='/proptypes' element={<PropTypes />} />
+                <Route path='/prop_types' element={<PropTypes />} />
                 <Route path='/classnames' element={<ClassNames />} />
                 <Route path='/suspense' element={<SuspenseUserDetails />} />
                 <Route path='/demoSuspense' element={<DemoSuspense />} />
                 <Route path='/errorBoundary' element={<ErrorBoundary />} />
                 <Route path='/hoc' element={<HOC />} />
-                <Route path='/formvalidation' element={<FormValidation />} />
+                <Route path='/form_validation' element={<FormValidation />} />
                 <Route path='/redux_toolkit' element={<ReduxToolKit />} />
                 <Route path='/redux' element={<Redux />} />
                 <Route path='/redux_todo' element={<Redux_Todo />} />
                 <Route path='/auth' element={<AuthCompo />} />
+                <Route path='/notes' element={<Notes />} />
 
                 <Route path='*' element={<NotFound />} />
               </Routes>

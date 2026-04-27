@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.note_list {
+  border: 1px solid gray;
+  padding: 20px;
+  border-radius: 20px;
+  overflow: auto;
+}
+
+.note_list h3 {
+  text-align: center;
+}
+
+ul {
+  margin-top: 10px;
+}
+
+.filter_container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.filter {
+  border: none;
+  border-radius: 8px;
+  width: 80px;
+  background-color: beige;
+}
