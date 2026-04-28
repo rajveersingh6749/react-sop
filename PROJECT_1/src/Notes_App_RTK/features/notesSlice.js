@@ -12,7 +12,7 @@ const loadNotes = () => {
 
 const initialState = {
   notes: loadNotes(),
-  filter: 'ALL'
+  filter: 'ALL',
 }
 
 export const notesSlice = createSlice({
@@ -23,6 +23,7 @@ export const notesSlice = createSlice({
       state.notes.push({
         id: Date.now(),
         ...action.payload,
+        pinned: false,
       })
     },
     updateNote: (state, action) => {
@@ -36,28 +37,41 @@ export const notesSlice = createSlice({
       state.notes = state.notes.filter((note) => note.id !== action.payload)
     },
     filterNotes: (state, action) => {
-        state.filter = action.payload
-    }
+      state.filter = action.payload
+    },
+    togglePin: (state, action) => {
+      const note = state.notes.find((n) => n.id === action.payload)
+      if (note) {
+        note.pinned = !note.pinned
+      }
+    },
   },
 })
 
 export const selectFilteredNotes = (state) => {
   const { notes, filter } = state.notes
 
+  let filtered = notes
+
   if (filter === 'WORK') {
-    return notes.filter((note) => note.category === 'Work')
+    filtered = notes.filter((note) => note.category === 'Work')
+    // return notes.filter((note) => note.category === 'Work')
   }
 
   if (filter === 'PERSONAL') {
-    return notes.filter((note) => note.category === 'Personal')
+    filtered = notes.filter((note) => note.category === 'Personal')
+    // return notes.filter((note) => note.category === 'Personal')
   }
 
   if (filter === 'IDEAS') {
-    return notes.filter((note) => note.category === 'Ideas')
+    filtered = notes.filter((note) => note.category === 'Ideas')
+    // return notes.filter((note) => note.category === 'Ideas')
   }
 
-  return notes // ALL
+  return [...filtered].sort((a, b) => b.pinned - a.pinned) // sort pinned first
+  // return notes // ALL
 }
 
-export const { addNote, updateNote, deleteNote, filterNotes } = notesSlice.actions
+export const { addNote, updateNote, deleteNote, filterNotes, togglePin } =
+  notesSlice.actions
 export default notesSlice.reducer

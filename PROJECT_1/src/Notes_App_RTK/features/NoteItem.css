@@ -63,3 +63,22 @@
 .edit_section button:hover {
   background-color: rgb(206, 206, 182);
 }
+
+.pinned {
+  border-left: 5px solid gold;
+  background-color: #fffbea;
+}
+
+.pin_btn {
+  background-color: #e0e0e0;
+}
+
+.pin_btn:hover {
+  background-color: #cfcfcf;
+}
+
+.active_pin {
+  background-color: gold;
+  color: black;
+  font-weight: bold;
+}

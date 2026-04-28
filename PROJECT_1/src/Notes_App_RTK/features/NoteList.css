@@ -23,11 +23,14 @@ ul {
   display: flex;
   justify-content: center;
   gap: 10px;
+  position: sticky;
+  z-index: 1000;
+  top: 0;
 }
 
 .filter {
   border: none;
   border-radius: 8px;
   width: 80px;
-  background-color: beige;
+  background-color: burlywood;
 }

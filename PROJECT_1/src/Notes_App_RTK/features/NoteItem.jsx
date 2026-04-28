@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './NoteItem.css'
 import { useDispatch } from 'react-redux'
-import { deleteNote, updateNote } from './notesSlice'
+import { deleteNote, togglePin, updateNote } from './notesSlice'
 
 const NoteItem = ({ note }) => {
   const [isEditing, setIsEditing] = useState(false)
@@ -31,7 +31,7 @@ const NoteItem = ({ note }) => {
   }
 
   return (
-    <div className='list_note_item'>
+    <div className={`list_note_item ${note.pinned ? 'pinned' : ''}`}>
       {isEditing ? (
         <div className='edit_section'>
           <input
@@ -58,6 +58,12 @@ const NoteItem = ({ note }) => {
             </button>
             <button className='btn' onClick={handleDelete}>
               Delete
+            </button>
+            <button
+              className={`btn pin_btn ${note.pinned ? 'active_pin' : ''}`}
+              onClick={() => dispatch(togglePin(note.id))}
+            >
+              {note.pinned ? '📌 Unpin' : '📍 Pin'}
             </button>
           </div>
         </>

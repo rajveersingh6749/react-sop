@@ -130,6 +130,7 @@ const Redux = lazy(() => import('./Redux/Redux.jsx'))
 const Redux_Todo = lazy(() => import('./Redux_Todo/Redux_Todo.jsx'))
 const AuthCompo = lazy(() => import('./Authentication_System/AuthCompo.jsx'))
 const Notes = lazy(() => import('./Notes_App_RTK/Notes.jsx'))
+const ReduxPractice = lazy(() => import('./Practice/ReduxPractice.jsx'))
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -316,6 +317,9 @@ function App() {
               <Link to='/notes' className='nav_link3'>
                 Notes App
               </Link>
+              <Link to='/practice' className='nav_link3'>
+                Redux Practice
+              </Link>
             </nav>
           </div>
 
@@ -434,6 +438,7 @@ function App() {
                 <Route path='/redux_todo' element={<Redux_Todo />} />
                 <Route path='/auth' element={<AuthCompo />} />
                 <Route path='/notes' element={<Notes />} />
+                <Route path='/practice' element={<ReduxPractice />} />
 
                 <Route path='*' element={<NotFound />} />
               </Routes>
