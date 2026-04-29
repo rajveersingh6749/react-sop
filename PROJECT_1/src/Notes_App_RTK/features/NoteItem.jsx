@@ -56,7 +56,7 @@ const NoteItem = ({ note }) => {
             <button className='btn' onClick={() => setIsEditing(true)}>
               Edit
             </button>
-            <button className='btn' onClick={handleDelete}>
+            <button className='btn btn_danger' onClick={handleDelete}>
               Delete
             </button>
             <button

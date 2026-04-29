@@ -60,6 +60,15 @@
   color: black;
 }
 
+.btn_danger {
+  background: #e74c3c;
+  color: white;
+}
+
+.btn_danger:hover {
+  background: #d34636;
+}
+
 .edit_section button:hover {
   background-color: rgb(206, 206, 182);
 }
