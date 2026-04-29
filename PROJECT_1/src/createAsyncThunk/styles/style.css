@@ -96,6 +96,10 @@ body {
   border: 1px solid #e74c3c;
 }
 
+.retry_btn {
+  background-color: beige;
+}
+
 .pagination {
   display: flex;
   justify-content: center;

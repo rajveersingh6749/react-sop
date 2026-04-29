@@ -130,7 +130,6 @@ const Redux = lazy(() => import('./Redux/Redux.jsx'))
 const Redux_Todo = lazy(() => import('./Redux_Todo/Redux_Todo.jsx'))
 const AuthCompo = lazy(() => import('./Authentication_System/AuthCompo.jsx'))
 const Notes = lazy(() => import('./Notes_App_RTK/Notes.jsx'))
-const ReduxPractice = lazy(() => import('./Practice/ReduxPractice.jsx'))
 const CreateAsyncThunk = lazy(
   () => import('./createAsyncThunk/CreateAsyncThunk.jsx'),
 )
@@ -320,9 +319,6 @@ function App() {
               <Link to='/notes' className='nav_link3'>
                 Notes App
               </Link>
-              <Link to='/practice' className='nav_link3'>
-                Redux Practice
-              </Link>
               <Link to='/createAsyncThunk' className='nav_link3'>
                 CreateAsyncThunk
               </Link>
@@ -444,7 +440,6 @@ function App() {
                 <Route path='/redux_todo' element={<Redux_Todo />} />
                 <Route path='/auth' element={<AuthCompo />} />
                 <Route path='/notes' element={<Notes />} />
-                <Route path='/practice' element={<ReduxPractice />} />
                 <Route path='/createAsyncThunk' element={<CreateAsyncThunk />} />
 
                 <Route path='*' element={<NotFound />} />

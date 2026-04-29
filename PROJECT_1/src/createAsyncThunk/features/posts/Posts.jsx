@@ -50,7 +50,7 @@ const Posts = () => {
       <div className='error_box'>
         <h3>Something went wrong</h3>
         <p>{error}</p>
-        <button className='btn' onClick={() => dispatch(fetchPosts())}>
+        <button className='btn retry_btn' onClick={() => dispatch(fetchPosts())}>
           Retry
         </button>
       </div>
