@@ -5,9 +5,11 @@ import '../../styles/style.css'
 export default function TeamList({ members, onSelect }) {
   return (
     <div className='grid'>
-      {members.map((member) => (
-        <TeamCard key={member.id} member={member} onSelect={onSelect} />
-      ))}
+      <div className='card_container'>
+        {members.map((member) => (
+          <TeamCard key={member.id} member={member} onSelect={onSelect} />
+        ))}
+      </div>
     </div>
   )
 }

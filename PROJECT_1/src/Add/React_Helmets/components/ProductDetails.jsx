@@ -15,46 +15,48 @@ const ProductDetails = () => {
   }
 
   return (
-    <div className='product_details_container'>
-      <SEO
-        title={`${product.name} | My Store`}
-        description={product.description}
-      />
+    <div className='p_container'>
+      <div className='product_details_container'>
+        <SEO
+          title={`${product.name} | My Store`}
+          description={product.description}
+        />
 
-      <h1>Product Details</h1>
-      <div className='product_details'>
-        <p>
-          <b>Name: </b>
-          {product.name}
-        </p>
-        <p>
-          <b>Description: </b>
-          {product.description}
-        </p>
-        <p>
-          <b>Price: </b>
-          {product.price}
-        </p>
-        <p>
-          <b>Brand: </b>
-          {product.brand}
-        </p>
-        <p>
-          <b>Category: </b>
-          {product.category}
-        </p>
-        <p>
-          <b>Stock: </b>
-          {product.stock}
-        </p>
-        <p>
-          <b>Rating: </b>
-          {product.rating}
-        </p>
-        <p>
-          <b>Reviews: </b>
-          {product.reviews}
-        </p>
+        <h1>Product Details</h1>
+        <div className='product_details'>
+          <p>
+            <b>Name: </b>
+            {product.name}
+          </p>
+          <p>
+            <b>Description: </b>
+            {product.description}
+          </p>
+          <p>
+            <b>Price: </b>
+            {product.price}
+          </p>
+          <p>
+            <b>Brand: </b>
+            {product.brand}
+          </p>
+          <p>
+            <b>Category: </b>
+            {product.category}
+          </p>
+          <p>
+            <b>Stock: </b>
+            {product.stock}
+          </p>
+          <p>
+            <b>Rating: </b>
+            {product.rating}
+          </p>
+          <p>
+            <b>Reviews: </b>
+            {product.reviews}
+          </p>
+        </div>
       </div>
     </div>
   )

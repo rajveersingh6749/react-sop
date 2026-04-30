@@ -7,7 +7,7 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: navy;
+  background-color: goldenrod;
   padding: 20px 0;
   display: flex;
   justify-content: center;
@@ -19,18 +19,30 @@
   justify-content: center;
   align-items: center;
   font-size: 22px;
-  color: wheat;
+  color: black;
+}
+
+.parent_helmet_container {
+  display: flex;
+  justify-content: center;
 }
 
 .list_helmet_container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-  gap: 20px;
+  width: 900px;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: 20px;
   list-style: none;
+  background-color: #1e293b;
+  padding: 20px 10px;
+  border-radius: 20px;
+  overflow: auto;
 }
 
 .product_list_item {
+  width: 600px;
   background: #1e293b;
   border: 1px solid gray;
   border-radius: 10px;
@@ -54,7 +66,13 @@
 }
 
 .product_details_container {
+  width: 100%;
+  height: 700px;
   margin-top: 10px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .product_details {
@@ -66,6 +84,19 @@
 }
 
 .helmet_products_list {
+  width: 900px;
+  height: 700px;
+  overflow: auto;
   margin-top: 10px;
   list-style: none;
+  background-color: rgb(69, 33, 104);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+}
+
+.product_title {
+  margin-top: 20px;
+  color: goldenrod;
 }

@@ -31,15 +31,17 @@ const ProductList = ({ products }) => {
       </div>
 
       {/* Products */}
-      <div className='grid'>
-        {filteredProducts.map((product) => (
-          <div key={product.id} onClick={() => setSelectedId(product.id)}>
-            <ProductCard
-              product={product}
-              isSelected={selectedId === product.id}
-            />
-          </div>
-        ))}
+      <div className='parent_grid'>
+        <div className='grid'>
+          {filteredProducts.map((product) => (
+            <div key={product.id} onClick={() => setSelectedId(product.id)}>
+              <ProductCard
+                product={product}
+                isSelected={selectedId === product.id}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   )

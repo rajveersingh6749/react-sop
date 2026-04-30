@@ -6,15 +6,24 @@ body {
 }
 
 .app {
-  padding: 30px;
-  max-width: 1200px;
+  padding: 0 30px;
   margin: auto;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 30px;
+  background-color: #22c55e;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.site_title {
+  font-style: italic;
 }
 
 .grid {
@@ -49,6 +58,14 @@ body {
   justify-content: center;
   align-items: center;
   font-weight: bold;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  align-items: start;
 }
 
 .info h3 {

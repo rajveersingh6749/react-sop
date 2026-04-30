@@ -6,6 +6,7 @@ body {
 .section {
   background-color: rgb(52, 24, 78);
   height: 780px;
+  border-radius: 20px;
 }
 
 /* Container */

@@ -1,9 +1,11 @@
+import '../styles/style.css'
+
 export default function ProductCard({ product, addToCart }) {
   return (
-    <div style={{ border: '1px solid gray', margin: '10px' }}>
+    <div className="product_card">
       <h3>{product.name}</h3>
       <p>${product.price}</p>
-      <button onClick={() => addToCart(product)}>Add to Cart</button>
+      <button className='product_card_btn' onClick={() => addToCart(product)}>Add to Cart</button>
     </div>
   )
 }

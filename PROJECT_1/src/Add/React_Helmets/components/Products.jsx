@@ -9,7 +9,7 @@ const Products = () => {
         description='Explore all available products in our store.'
       />
 
-      <h1>Products List</h1>
+      <h1 className='product_title'>Products List</h1>
       <ul className='helmet_products_list'>
         {PRODUCTS.map((product, index) => (
           <li key={product.id} className='helmet_products_list_item'>
