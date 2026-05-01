@@ -14,4 +14,24 @@ export const products = [
     price: 399,
     image: 'https://images.unsplash.com/photo-1580894732444-8ecded7900cd?w=800',
   },
+  {
+    name: 'Sony XM5',
+    price: 399,
+    image: 'https://images.unsplash.com/photo-1580894732444-8ecded7900cd?w=800',
+  },
+  {
+    name: 'Sony XM5',
+    price: 399,
+    image: 'https://images.unsplash.com/photo-1580894732444-8ecded7900cd?w=800',
+  },
+  {
+    name: 'Sony XM5',
+    price: 399,
+    image: 'https://images.unsplash.com/photo-1580894732444-8ecded7900cd?w=800',
+  },
+  {
+    name: 'Sony XM5',
+    price: 399,
+    image: 'https://images.unsplash.com/photo-1580894732444-8ecded7900cd?w=800',
+  },
 ]

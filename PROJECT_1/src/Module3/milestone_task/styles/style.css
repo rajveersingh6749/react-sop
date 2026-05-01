@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: black;
+  color: white;
+}
+
+.app {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.title {
+  margin-bottom: 40px;
+  background-color: gold;
+  width: 100%;
+  text-align: center;
+  padding: 12px 20px;
+  color: black;
+}
+
+.timer-card {
+  width: 920px;
+  height: 600px;
+  background: violet;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.display {
+  font-size: 40px;
+  margin: 15px 0;
+}
+
+.controls button {
+  margin: 5px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #3b82f6;
+  color: white;
+}
+
+.controls button:hover {
+  opacity: 0.9;
+}
+
+.ring {
+  transform: rotate(-90deg);
+}

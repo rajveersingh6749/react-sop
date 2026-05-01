@@ -7,70 +7,79 @@
 
 /* Body */
 body {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   background: linear-gradient(135deg, #0f172a, #1e293b);
   color: white;
 }
 
 /* App container */
 .app {
-  padding: 40px;
-  max-width: 1200px;   /* 👈 controls overall width */
-  margin: 0 auto;      /* 👈 center */
+  padding: 0 40px;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Title */
 .title {
   text-align: center;
   font-size: 36px;
   margin-bottom: 30px;
+  background-color: violet;
+  padding: 10px 18px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-/* Layout */
 .layout {
   display: flex;
+  justify-content: space-between;
   gap: 30px;
   align-items: flex-start; /* 👈 prevents stretch */
+  width: 920px;
+  height: 700px;
+  background-color: black;
+  overflow: auto;
+  padding: 20px;
+  border-radius: 20px;
 }
 
-/* Product List Grid */
 .product-list {
-  flex: 2;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 280px));
+  display: flex;
+  flex-wrap: wrap;
+
   gap: 25px;
-  justify-content: center; /* 👈 center cards */
+  width: 700px;
 }
 
-/* Card */
 .card {
   width: 100%;
-  max-width: 280px;  /* 👈 fixed size */
+  max-width: 280px;
   background: rgba(255, 255, 255, 0.05);
   padding: 15px;
   border-radius: 15px;
   text-align: center;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid gray;
 }
 
-/* Hover */
 .card:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
-/* Image */
 .card img {
   width: 100%;
-  height: 160px;      /* 👈 FIXED IMAGE SIZE */
+  height: 160px;
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 10px;
 }
 
-/* Text */
 .card h3 {
   font-size: 18px;
   margin-bottom: 5px;
@@ -81,7 +90,6 @@ body {
   color: #cbd5e1;
 }
 
-/* Button */
 .card button {
   margin-top: 10px;
   padding: 8px 12px;
@@ -98,25 +106,30 @@ body {
   opacity: 0.9;
 }
 
-/* Cart */
 .cart {
   flex: 1;
   max-width: 350px;
-  background: rgba(255, 255, 255, 0.05);
+  background: gold;
   padding: 20px;
   border-radius: 15px;
   backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  height: fit-content;
 }
 
-/* Cart Items */
 .cart-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 5px;
   margin: 10px 0;
 }
 
-/* Quantity Controls */
+.qty {
+  display: flex;
+}
+
 .qty button {
   margin: 0 5px;
   padding: 4px 8px;

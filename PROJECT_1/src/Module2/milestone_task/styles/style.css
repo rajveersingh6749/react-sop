@@ -1,0 +1,107 @@
+body.light {
+  background: white;
+  color: black;
+}
+
+body.dark {
+  background: black;
+  color: white;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: goldenrod;
+  padding: 12px 20px;
+  margin-bottom: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app_name {
+  font-style: italic;
+  color: gray;
+}
+
+.theme-btn {
+  padding: 8px 12px;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  background-color: gray;
+}
+
+.theme-btn:hover {
+  background-color: rgb(99, 94, 94);
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+  width: 920px;
+  height: 600px;
+  border-radius: 20px;
+}
+
+.counter-box {
+  flex: 1;
+  padding: 20px;
+  border-radius: 20px;
+  background: gray;
+}
+
+.display {
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.controls button {
+  background-color: #0f172a;
+  border: none;
+  color: wheat;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.history {
+  width: 250px;
+  padding: 20px;
+  border-radius: 20px;
+  background: gray;
+  overflow: auto;
+}
+
+.history_tag {
+  color: gold;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  margin-bottom: 10px;
+}
+
+.history ul {
+  list-style: none;
+  padding: 0;
+}
+
+.history li {
+  margin: 5px 0;
+  font-size: 14px;
+}

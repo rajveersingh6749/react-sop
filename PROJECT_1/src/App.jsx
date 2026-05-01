@@ -18,11 +18,17 @@ const ProductCard = lazy(
 const UseStateHook = lazy(
   () => import('./Module2/module_2/Module2Demo1/UseStateHook.jsx'),
 )
-const MyForm = lazy(() => import('./Module2/module_2/MyForm'))
-const Counter = lazy(() => import('./Module2/milestone_task/Counter'))
-const Task3 = lazy(() => import('./Module3/module_3/task3.jsx'))
-const TimerComponent = lazy(
-  () => import('./Module3/milestone_task/TimerComponent'),
+const AdvancedCounterApp = lazy(
+  () => import('./Module2/milestone_task/AdvancedCounterApp.jsx'),
+)
+const FormValidationDemo = lazy(
+  () => import('./Module2/module_2/Module2Demo2/FormValidation.jsx'),
+)
+const UseEffectAdvancedApp = lazy(
+  () => import('./Module3/module_3/UseEffectAdvancedApp.jsx'),
+)
+const AdvancedTimer = lazy(
+  () => import('./Module3/milestone_task/AdvancedTimer.jsx'),
 )
 const Mod_4 = lazy(() => import('./Module4/module_4/mod_4.jsx'))
 const Task4 = lazy(() => import('./Module4/milestone_task/Counter.jsx'))
@@ -165,8 +171,8 @@ function App() {
               <Link to='/use_state_hook' className='nav_link3'>
                 Module2 Demo1: UseState Hook Managing Local Component State
               </Link>
-              <Link to='/module2' className='nav_link3'>
-                Module 2 State and Events
+              <Link to='/form_handling' className='nav_link3'>
+                Module2Demo2 Form Handling
               </Link>
               <Link to='/milestone2' className='nav_link3'>
                 Milestone Task 2 Counter App
@@ -344,10 +350,10 @@ function App() {
                 />
                 <Route path='/product_card' element={<ProductCard />} />
                 <Route path='/use_state_hook' element={<UseStateHook />} />
-                <Route path='/module2' element={<MyForm />} />
-                <Route path='/milestone2' element={<Counter />} />
-                <Route path='/module3' element={<Task3 />} />
-                <Route path='/milestone3' element={<TimerComponent />} />
+                <Route path='/form_handling' element={<FormValidationDemo />} />
+                <Route path='/milestone2' element={<AdvancedCounterApp />} />
+                <Route path='/module3' element={<UseEffectAdvancedApp />} />
+                <Route path='/milestone3' element={<AdvancedTimer />} />
                 <Route path='/module4' element={<Mod_4 />} />
                 <Route path='/milestone4' element={<Task4 />} />
                 <Route path='/module5' element={<Mod_5 />} />
@@ -440,7 +446,10 @@ function App() {
                 <Route path='/redux_todo' element={<Redux_Todo />} />
                 <Route path='/auth' element={<AuthCompo />} />
                 <Route path='/notes' element={<Notes />} />
-                <Route path='/createAsyncThunk' element={<CreateAsyncThunk />} />
+                <Route
+                  path='/createAsyncThunk'
+                  element={<CreateAsyncThunk />}
+                />
 
                 <Route path='*' element={<NotFound />} />
               </Routes>
