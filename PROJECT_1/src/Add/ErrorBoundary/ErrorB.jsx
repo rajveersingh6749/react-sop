@@ -1,4 +1,4 @@
-import './styles/errorB.css'
+import './styles/style.css'
 import Navbar from './components/Navbar'
 import ProductList from './components/ProductList'
 import PaymentPanel from './components/PaymentPanel'

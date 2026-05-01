@@ -30,8 +30,12 @@ const UseEffectAdvancedApp = lazy(
 const AdvancedTimer = lazy(
   () => import('./Module3/milestone_task/AdvancedTimer.jsx'),
 )
-const Mod_4 = lazy(() => import('./Module4/module_4/mod_4.jsx'))
-const Task4 = lazy(() => import('./Module4/milestone_task/Counter.jsx'))
+const CustomHooksApp = lazy(
+  () => import('./Module4/module_4/CustomHooksApp.jsx'),
+)
+const PersistentCounterApp = lazy(
+  () => import('./Module4/milestone_task/PersistentCounterApp.jsx'),
+)
 const Mod_5 = lazy(() => import('./Module5/module_5/Mod_5.jsx'))
 const Task5 = lazy(() => import('./Module5/milestone_task/MyApp.jsx'))
 const Module6demo1 = lazy(
@@ -111,10 +115,10 @@ const MileStone9demo2 = lazy(
 const MileStone9demo3 = lazy(
   () => import('./Module9/milestone_task/Demo3/MilestoneTask9demo3.jsx'),
 )
-const ControlledCompo = lazy(() => import('./Add/ControlledCompo.jsx'))
-const UncontrolledCompo = lazy(() => import('./Add/UncontrolledCompo.jsx'))
-const Count = lazy(() => import('./Add/UncontrolledCount.jsx'))
-const ControlledCompoForm = lazy(() => import('./Add/ControlledCompoForm.jsx'))
+const FormComparisonApp = lazy(
+  () =>
+    import('./Add/Controlled_And_UnControlled_Components/FormComparisonApp.jsx'),
+)
 const ReactHelmets = lazy(
   () => import('./Add/React_Helmets/ReactHelmetsApp.jsx'),
 )
@@ -122,19 +126,15 @@ const PropTypes = lazy(() => import('./Add/Prop_Types/PropTypes.jsx'))
 const ClassNames = lazy(
   () => import('./Add/ClassnamesPackage/ClassNamePackage.jsx'),
 )
-const SuspenseUserDetails = lazy(
-  () => import('./Add/Suspense/SuspenseUserDetails.jsx'),
+const SuspenseDemoApp = lazy(
+  () => import('./Add/Suspense_And_Lazy_Loading/SuspenseDemoApp.jsx'),
 )
-const DemoSuspense = lazy(() => import('./Add/Suspense2/DemoSuspense.jsx'))
 const ErrorBoundary = lazy(() => import('./Add/ErrorBoundary/ErrorB.jsx'))
 const HOC = lazy(() => import('./Add/HOC/HigherOrderComponent.jsx'))
 const FormValidation = lazy(
   () => import('./React_Form_Validation/FormValidation.jsx'),
 )
-const ReduxToolKit = lazy(() => import('./ReduxToolKit/ReduxApp.jsx'))
-const Redux = lazy(() => import('./Redux/Redux.jsx'))
 const Redux_Todo = lazy(() => import('./Redux_Todo/Redux_Todo.jsx'))
-const AuthCompo = lazy(() => import('./Authentication_System/AuthCompo.jsx'))
 const Notes = lazy(() => import('./Notes_App_RTK/Notes.jsx'))
 const CreateAsyncThunk = lazy(
   () => import('./createAsyncThunk/CreateAsyncThunk.jsx'),
@@ -273,18 +273,8 @@ function App() {
               <Link to='/milestone9demo3' className='nav_link3'>
                 Milestone Task 9 with React 19 Compiler
               </Link>
-
-              <Link to='/controlled' className='nav_link3'>
-                Controlled Component
-              </Link>
-              <Link to='/uncontrolled' className='nav_link3'>
-                Uncontrolled Component
-              </Link>
-              <Link to='/count' className='nav_link3'>
-                Uncontrolled Component (Counter App)
-              </Link>
-              <Link to='/controlledCount' className='nav_link3'>
-                Controlled Component Form
+              <Link to='/form_comparison' className='nav_link3'>
+                Controlled Vs Uncontrolled Components
               </Link>
               <Link to='/helmet' className='nav_link3'>
                 React Helmets
@@ -295,11 +285,8 @@ function App() {
               <Link to='/classnames' className='nav_link3'>
                 Classnames
               </Link>
-              <Link to='/suspense' className='nav_link3'>
-                Suspense using use() API
-              </Link>
-              <Link to='/demoSuspense' className='nav_link3'>
-                Suspense using useEffect() hook
+              <Link to='/suspense_lazy_loading' className='nav_link3'>
+                Suspense and Lazy Loading
               </Link>
               <Link to='/errorBoundary' className='nav_link3'>
                 Error Boundary
@@ -310,17 +297,8 @@ function App() {
               <Link to='/form_validation' className='nav_link3'>
                 React Form Validation
               </Link>
-              <Link to='/redux_toolkit' className='nav_link3'>
-                Redux ToolKit
-              </Link>
-              <Link to='/redux' className='nav_link3'>
-                Redux
-              </Link>
               <Link to='/redux_todo' className='nav_link3'>
                 Redux_Todo
-              </Link>
-              <Link to='/auth' className='nav_link3'>
-                Authentication System
               </Link>
               <Link to='/notes' className='nav_link3'>
                 Notes App
@@ -354,8 +332,8 @@ function App() {
                 <Route path='/milestone2' element={<AdvancedCounterApp />} />
                 <Route path='/module3' element={<UseEffectAdvancedApp />} />
                 <Route path='/milestone3' element={<AdvancedTimer />} />
-                <Route path='/module4' element={<Mod_4 />} />
-                <Route path='/milestone4' element={<Task4 />} />
+                <Route path='/module4' element={<CustomHooksApp />} />
+                <Route path='/milestone4' element={<PersistentCounterApp />} />
                 <Route path='/module5' element={<Mod_5 />} />
                 <Route path='/milestone5' element={<Task5 />} />
                 <Route path='/module6demo1' element={<Module6demo1 />} />
@@ -426,25 +404,21 @@ function App() {
                 <Route path='/milestone9demo1' element={<MileStone9demo1 />} />
                 <Route path='/milestone9demo2' element={<MileStone9demo2 />} />
                 <Route path='/milestone9demo3' element={<MileStone9demo3 />} />
-                <Route path='/controlled' element={<ControlledCompo />} />
-                <Route path='/uncontrolled' element={<UncontrolledCompo />} />
-                <Route path='/count' element={<Count />} />
                 <Route
-                  path='/controlledCount'
-                  element={<ControlledCompoForm />}
+                  path='/form_comparison'
+                  element={<FormComparisonApp />}
                 />
                 <Route path='/helmet/*' element={<ReactHelmets />} />
                 <Route path='/prop_types' element={<PropTypes />} />
                 <Route path='/classnames' element={<ClassNames />} />
-                <Route path='/suspense' element={<SuspenseUserDetails />} />
-                <Route path='/demoSuspense' element={<DemoSuspense />} />
+                <Route
+                  path='/suspense_lazy_loading'
+                  element={<SuspenseDemoApp />}
+                />
                 <Route path='/errorBoundary' element={<ErrorBoundary />} />
                 <Route path='/hoc' element={<HOC />} />
                 <Route path='/form_validation' element={<FormValidation />} />
-                <Route path='/redux_toolkit' element={<ReduxToolKit />} />
-                <Route path='/redux' element={<Redux />} />
                 <Route path='/redux_todo' element={<Redux_Todo />} />
-                <Route path='/auth' element={<AuthCompo />} />
                 <Route path='/notes' element={<Notes />} />
                 <Route
                   path='/createAsyncThunk'

@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
-import '../styles/card.css'
-import '../styles/button.css'
+import '../styles/style.css'
 
 export default function UserProfile() {
   const [user, setUser] = useState(null)
@@ -37,7 +36,6 @@ export default function UserProfile() {
   return (
     <div className='card'>
       <h3>User Profile</h3>
-      <hr />
       <p>Name: {user.name}</p>
       <p>Email: {user.email}</p>
       <button className='btn' onClick={fetchUser}>

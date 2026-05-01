@@ -1,7 +1,8 @@
-/* .custom_container {
-  position: sticky;
-  top: 0px;
-} */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 .helmet_nav_bar {
   position: sticky;

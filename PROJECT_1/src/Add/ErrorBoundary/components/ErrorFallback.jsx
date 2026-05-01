@@ -1,4 +1,4 @@
-import '../styles/error.css'
+import '../styles/style.css'
 
 export default function ErrorFallback({ error, resetErrorBoundary }) {
   return (

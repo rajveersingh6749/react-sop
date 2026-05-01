@@ -1,22 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .home_parent_container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
 }
 
 .home_container {
-    background-color: gold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    border: 1px solid gray;
-    border-radius: 10px;
+  background-color: gold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border: 1px solid gray;
+  border-radius: 10px;
 }
 
 .home {
-    color: gray;
-    padding: 12px 20px;
+  color: gray;
+  padding: 12px 20px;
 }

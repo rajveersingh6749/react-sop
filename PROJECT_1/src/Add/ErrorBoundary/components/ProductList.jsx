@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import '../styles/card.css'
+import '../styles/style.css'
 
 export default function ProductList() {
   const [products, setProducts] = useState(null)
@@ -22,7 +22,6 @@ export default function ProductList() {
   return (
     <div className='card'>
       <h3>Products</h3>
-      <hr />
       <ul>
         {products.map((p, index) => (
           <li key={p.id}>{`${index + 1}. ${p.title}`}</li>

@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import '../styles/card.css'
-import '../styles/button.css'
+import '../styles/style.css'
 
 export default function PaymentPanel() {
   const [amount, setAmount] = useState(0)
@@ -15,7 +14,6 @@ export default function PaymentPanel() {
   return (
     <div className='card'>
       <h3>Payment</h3>
-      <hr />
       <input
         type='number'
         value={amount}

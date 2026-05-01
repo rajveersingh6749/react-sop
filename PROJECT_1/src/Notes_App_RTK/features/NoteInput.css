@@ -13,8 +13,9 @@
 .input_container h2 {
   color: white;
   font-style: italic;
-  background-color: green;
-  padding: 10px 15px;
+  background-color: goldenrod;
+  color: gray;
+  padding: 12px 20px;
   text-align: start;
   position: sticky;
   top: 0;
