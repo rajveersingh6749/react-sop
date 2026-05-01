@@ -23,6 +23,55 @@ const USERS = [
     status: 'active',
     avatar: '',
   },
+  {
+    id: 4,
+    name: 'Sara Khan',
+    role: 'Manager',
+    status: 'active',
+    avatar: '',
+  },
+  {
+    id: 5,
+    name: 'Sara Khan',
+    role: 'Manager',
+    status: 'active',
+    avatar: '',
+  },
+  {
+    id: 6,
+    name: 'Sara Khan',
+    role: 'Manager',
+    status: 'active',
+    avatar: '',
+  },
+  {
+    id: 7,
+    name: 'Sara Khan',
+    role: 'Manager',
+    status: 'active',
+    avatar: '',
+  },
+  {
+    id: 8,
+    name: 'Sara Khan',
+    role: 'Manager',
+    status: 'active',
+    avatar: '',
+  },
+  {
+    id: 9,
+    name: 'Sara Khan',
+    role: 'Manager',
+    status: 'active',
+    avatar: '',
+  },
+  {
+    id: 10,
+    name: 'Sara Khan',
+    role: 'Manager',
+    status: 'active',
+    avatar: '',
+  },
 ]
 
 export default function Props() {

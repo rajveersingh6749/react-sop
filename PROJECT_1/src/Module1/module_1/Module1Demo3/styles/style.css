@@ -6,8 +6,9 @@ body {
 }
 
 .app {
-  padding: 0 30px;
-  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .header {
@@ -16,10 +17,12 @@ body {
   align-items: center;
   margin-bottom: 30px;
   background-color: #22c55e;
-  padding: 10px 20px;
+  color: gray;
+  padding: 12px 20px;
   position: sticky;
   top: 0;
   z-index: 1000;
+  width: 100%;
 }
 
 .site_title {
@@ -27,12 +30,21 @@ body {
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  width: 1000px;
+  height: 700px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   gap: 20px;
+  background-color: rgb(59, 21, 95);
+  padding: 20px;
+  border-radius: 20px;
+  overflow: auto;
 }
 
 .card {
+  width: 300px;
+  height: 150px;
   background: #1e293b;
   padding: 20px;
   border-radius: 16px;
