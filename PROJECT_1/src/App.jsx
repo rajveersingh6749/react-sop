@@ -135,6 +135,7 @@ const FormValidation = lazy(
   () => import('./React_Form_Validation/FormValidation.jsx'),
 )
 const Redux_Todo = lazy(() => import('./Redux_Todo/Redux_Todo.jsx'))
+const PostManagerApp = lazy(() => import('./ReduxThunk/PostManagerApp.jsx'))
 const Notes = lazy(() => import('./Notes_App_RTK/Notes.jsx'))
 const CreateAsyncThunk = lazy(
   () => import('./createAsyncThunk/CreateAsyncThunk.jsx'),
@@ -300,6 +301,9 @@ function App() {
               <Link to='/redux_todo' className='nav_link3'>
                 Redux_Todo
               </Link>
+              <Link to='/redux_thunk' className='nav_link3'>
+                Redux Thunk
+              </Link>
               <Link to='/notes' className='nav_link3'>
                 Notes App
               </Link>
@@ -419,6 +423,7 @@ function App() {
                 <Route path='/hoc' element={<HOC />} />
                 <Route path='/form_validation' element={<FormValidation />} />
                 <Route path='/redux_todo' element={<Redux_Todo />} />
+                <Route path='/redux_thunk' element={<PostManagerApp />} />
                 <Route path='/notes' element={<Notes />} />
                 <Route
                   path='/createAsyncThunk'
