@@ -140,6 +140,7 @@ const Notes = lazy(() => import('./Notes_App_RTK/Notes.jsx'))
 const CreateAsyncThunk = lazy(
   () => import('./createAsyncThunk/CreateAsyncThunk.jsx'),
 )
+const RTK_Query = lazy(() => import('./RTK_Query/ReduxQuery.jsx'))
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -310,6 +311,9 @@ function App() {
               <Link to='/createAsyncThunk' className='nav_link3'>
                 CreateAsyncThunk
               </Link>
+              <Link to='/rtk_query' className='nav_link3'>
+                RTK Query
+              </Link>
             </nav>
           </div>
 
@@ -429,6 +433,7 @@ function App() {
                   path='/createAsyncThunk'
                   element={<CreateAsyncThunk />}
                 />
+                <Route path='/rtk_query' element={<RTK_Query />} />
 
                 <Route path='*' element={<NotFound />} />
               </Routes>
