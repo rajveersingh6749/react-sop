@@ -141,6 +141,10 @@ const CreateAsyncThunk = lazy(
   () => import('./createAsyncThunk/CreateAsyncThunk.jsx'),
 )
 const RTK_Query = lazy(() => import('./RTK_Query/ReduxQuery.jsx'))
+const Calculator = lazy(() => import('./Calculator_Project/Calculator.jsx'))
+const CalcWithRedux = lazy(
+  () => import('./calculator_with_redux_toolkit/Calculator.jsx'),
+)
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -314,6 +318,12 @@ function App() {
               <Link to='/rtk_query' className='nav_link3'>
                 RTK Query
               </Link>
+              <Link to='/calc' className='nav_link3'>
+                Calculator
+              </Link>
+              <Link to='/calc_redux' className='nav_link3'>
+                Calc With Redux
+              </Link>
             </nav>
           </div>
 
@@ -434,6 +444,8 @@ function App() {
                   element={<CreateAsyncThunk />}
                 />
                 <Route path='/rtk_query' element={<RTK_Query />} />
+                <Route path='/calc' element={<Calculator />} />
+                <Route path='/calc_redux' element={<CalcWithRedux />} />
 
                 <Route path='*' element={<NotFound />} />
               </Routes>
