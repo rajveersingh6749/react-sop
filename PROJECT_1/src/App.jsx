@@ -145,6 +145,7 @@ const Calculator = lazy(() => import('./Calculator_Project/Calculator.jsx'))
 const CalcWithRedux = lazy(
   () => import('./calculator_with_redux_toolkit/Calculator.jsx'),
 )
+const Roulette = lazy(() => import('./roulette_casino_game/Roulette.jsx'))
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -324,6 +325,9 @@ function App() {
               <Link to='/calc_redux' className='nav_link3'>
                 Calc With Redux
               </Link>
+              <Link to='/roulette' className='nav_link3'>
+                Roulette Casino Game
+              </Link>
             </nav>
           </div>
 
@@ -446,6 +450,7 @@ function App() {
                 <Route path='/rtk_query' element={<RTK_Query />} />
                 <Route path='/calc' element={<Calculator />} />
                 <Route path='/calc_redux' element={<CalcWithRedux />} />
+                <Route path='/roulette' element={<Roulette />} />
 
                 <Route path='*' element={<NotFound />} />
               </Routes>

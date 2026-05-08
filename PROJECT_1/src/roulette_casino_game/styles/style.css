@@ -1,0 +1,212 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(0, 73, 0);
+}
+
+.roulette {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.roulette h1 {
+  text-align: center;
+  background-color: rgb(87, 12, 12);
+  padding: 12px 20px;
+  margin-bottom: 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.roulette_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.table_container {
+  display: flex;
+  gap: 40px;
+}
+
+.spin {
+  background-color: gray;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  font-size: 30px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spin:hover {
+  cursor: pointer;
+  background-color: rgb(114, 109, 109);
+}
+
+.history {
+  width: 40px;
+  height: 400px;
+  overflow: auto;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.bet_table {
+  display: grid;
+  grid-template-columns: repeat(14, 1fr);
+  width: 800px;
+}
+
+.zero {
+  grid-row: span 3;
+}
+
+.btn_112,
+.btn_1324,
+.btn_2536 {
+  grid-column: span 4;
+}
+
+.btn {
+  background-color: transparent;
+  border: 1px solid white;
+  padding: 10px;
+  color: white;
+  font-size: 20px;
+  border-collapse: collapse;
+}
+
+span {
+  font-size: 15px;
+}
+
+.btn:hover {
+  background-color: greenyellow;
+  color: black;
+  cursor: pointer;
+}
+
+.after_first,
+.after_2536,
+.before_118,
+.after_1936 {
+  border: none;
+  background-color: transparent;
+}
+
+.span_2 {
+  grid-column: span 2;
+}
+
+.chips {
+  display: flex;
+  gap: 20px;
+}
+
+.total_chips {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-weight: bold;
+  color: gray;
+  margin-left: 50px;
+}
+
+.chip {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: black;
+}
+
+.chip:hover {
+  background-color: rgb(2, 224, 224);
+  cursor: pointer;
+}
+
+.restart {
+  padding: 6px 10px;
+  background-color: rgb(13, 13, 136);
+  margin-left: 40px;
+  border: none;
+  border-radius: 20px;
+  color: white;
+}
+
+.restart:hover {
+  background-color: rgb(11, 11, 122);
+  cursor: pointer;
+  color: white;
+}
+
+.btn_1,
+.btn_3,
+.btn_5,
+.btn_7,
+.btn_9,
+.btn_12,
+.btn_14,
+.btn_16,
+.btn_18,
+.btn_19,
+.btn_21,
+.btn_23,
+.btn_25,
+.btn_27,
+.btn_30,
+.btn_32,
+.btn_34,
+.btn_36 {
+  background-color: red;
+}
+
+.btn_2,
+.btn_4,
+.btn_6,
+.btn_8,
+.btn_10,
+.btn_11,
+.btn_13,
+.btn_15,
+.btn_17,
+.btn_20,
+.btn_22,
+.btn_24,
+.btn_26,
+.btn_28,
+.btn_29,
+.btn_31,
+.btn_33,
+.btn_35 {
+  background-color: black;
+}
+
+.red {
+  background-color: red;
+}
+
+.black {
+  background-color: black;
+}
