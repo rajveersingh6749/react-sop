@@ -1,0 +1,16 @@
+import '../styles/styles.css'
+
+export default function SearchBar({ search, setSearch }) {
+  console.log('SearchBar Rendered')
+
+  return (
+    <div className='search-bar'>
+      <input
+        type='text'
+        placeholder='Search products...'
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
+    </div>
+  )
+}

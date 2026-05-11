@@ -83,13 +83,12 @@ const Transition = lazy(
   () => import('./Module8/start_transition/Transition.jsx'),
 )
 const Module9demo1 = lazy(
-  () => import('./Module9/module_9/Module9demo1/ReactMemo.jsx'),
+  () =>
+    import('./Module9/module_9/Module9demo1/features/react-memo-demo/ReactMemoDemo.jsx'),
 )
 const Module9demo2 = lazy(
-  () => import('./Module9/module_9/Module9demo2/UseMemo.jsx'),
-)
-const Module9demo3 = lazy(
-  () => import('./Module9/module_9/Module9demo3/UseMemo.jsx'),
+  () =>
+    import('./Module9/module_9/Module9demo2/features/usememo-demo/UseMemoDemo.jsx'),
 )
 const Module9demo4 = lazy(
   () => import('./Module9/module_9/Module9demo4/UseCallback.jsx'),
@@ -251,10 +250,7 @@ function App() {
                 Module9demo1 ReactMemo
               </Link>
               <Link to='/module9demo2' className='nav_link3'>
-                Module9demo2 requirement of useMemo
-              </Link>
-              <Link to='/module9demo3' className='nav_link3'>
-                Module9demo3 useMemo
+                Module9demo2 useMemo
               </Link>
               <Link to='/module9demo4' className='nav_link3'>
                 Module9demo4 requirement of useCallback
@@ -417,7 +413,7 @@ function App() {
                 <Route path='/transition' element={<Transition />} />
                 <Route path='/module9demo1' element={<Module9demo1 />} />
                 <Route path='/module9demo2' element={<Module9demo2 />} />
-                <Route path='/module9demo3' element={<Module9demo3 />} />
+                {/* <Route path='/module9demo3' element={<Module9demo3 />} /> */}
                 <Route path='/module9demo4' element={<Module9demo4 />} />
                 <Route path='/module9demo5' element={<Module9demo5 />} />
                 <Route path='/module9demo6' element={<Module9demo6 />} />
