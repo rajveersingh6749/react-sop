@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import BetTable from './components/BetTable'
 import Chips from './components/Chips'
 import './styles/style.css'
@@ -7,10 +7,20 @@ const Roulette = () => {
   const [selectedChip, setSelectedChip] = useState(10)
   const [bets, setBets] = useState([])
   const [spinResult, setSpinResult] = useState(null)
+  const [balance, setBalance] = useState(1000)
   const [history, setHistory] = useState([])
 
+  useEffect(() => {
+    bets.forEach((bet) => {
+      console.log('All Bets: ', bets)
+      console.log('Your bet: ', bet.value)
+    })
+  }, [bets])
+
   const placeBet = (type, value) => {
-    console.log(bets[bets.length - 1])
+    if (balance < selectedChip) return
+    setBalance((prev) => prev - selectedChip)
+    // console.log(bets[bets.length - 1])
     setBets((prev) => [
       ...prev,
       {
@@ -20,11 +30,6 @@ const Roulette = () => {
       },
     ])
   }
-
-  bets.forEach((bet) => {
-    console.log('All Bets: ', bets)
-    console.log("bet's value: ", bet.value)
-  })
 
   const redNumbers = [
     1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36,
@@ -38,6 +43,7 @@ const Roulette = () => {
     switch (bet.type) {
       case 'number':
         return bet.value === spinResult
+
       case 'color':
         if (bet.value === 'red') {
           return isRed(spinResult)
@@ -113,14 +119,18 @@ const Roulette = () => {
       <BetTable
         spinResult={spinResult}
         setSpinResult={setSpinResult}
-        selectedChip={selectedChip}
         setSelectedChip={setSelectedChip}
-        bets={bets}
         setBets={setBets}
+        bets={bets}
         placeBet={placeBet}
         checkIfBetWon={checkIfBetWon}
+        isRed={isRed}
+        balance={balance}
+        setBalance={setBalance}
+        history={history}
+        setHistory={setHistory}
       />
-      <Chips chip={selectedChip} setChip={setSelectedChip} />
+      <Chips setSelectedChip={setSelectedChip} />
     </div>
   )
 }

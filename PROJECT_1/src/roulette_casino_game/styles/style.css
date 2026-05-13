@@ -18,7 +18,6 @@ body {
   text-align: center;
   background-color: rgb(87, 12, 12);
   padding: 12px 20px;
-  margin-bottom: 40px;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -27,22 +26,46 @@ body {
 .roulette_container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   gap: 40px;
 }
 
+
+.clr_btn {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: rgb(63, 56, 56);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clr_btn:hover {
+  background-color: rgb(48, 42, 42);
+}
+
+.clr_btn > button {
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-size: 20px;
+}
+
 h2 {
+  text-align: center;
   font-weight: bold;
   font-size: 32px;
 }
 
 .table_container {
   display: flex;
-  gap: 40px;
+  justify-content: space-between;
+  /* gap: 100px; */
 }
 
 .spin {
-  background-color: gray;
+  background-color: rgb(71, 10, 10);
   width: 200px;
   height: 200px;
   border-radius: 50%;
@@ -55,7 +78,7 @@ h2 {
 
 .spin:hover {
   cursor: pointer;
-  background-color: rgb(114, 109, 109);
+  background-color: rgb(43, 2, 2);
 }
 
 .history {
@@ -115,6 +138,7 @@ span {
 
 .chips {
   display: flex;
+  justify-content: center;
   gap: 20px;
 }
 
@@ -132,7 +156,7 @@ span {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background-color: aqua;
+  background-color: gold;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -142,23 +166,26 @@ span {
 }
 
 .chip:hover {
-  background-color: rgb(2, 224, 224);
+  background-color: rgb(202, 153, 30);
   cursor: pointer;
 }
 
 .restart {
-  padding: 6px 10px;
-  background-color: rgb(13, 13, 136);
-  margin-left: 40px;
+  padding: 8px 12px;
+  background-color: wheat;
+  margin-left: 20px;
   border: none;
-  border-radius: 20px;
-  color: white;
+  border-radius: 10px;
+  color: black;
 }
 
 .restart:hover {
-  background-color: rgb(11, 11, 122);
+  background-color: rgb(226, 204, 164);
   cursor: pointer;
-  color: white;
+}
+
+.btn_container {
+  text-align: center;
 }
 
 .btn_1,
@@ -210,3 +237,16 @@ span {
 .black {
   background-color: black;
 }
+
+.history_container {
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 5px;
+  margin-bottom: 10px;
+  overflow: auto;
+}
+
+.history_card {
+  margin-bottom: 10px;
+}
+

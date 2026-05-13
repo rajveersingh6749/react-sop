@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import '../styles/style.css'
 
-const Chips = ({ chip, setChip }) => {
+const Chips = ({ setSelectedChip }) => {
   const getChipValue = (value) => {
     console.log('Chips Value: ', value)
-    setChip(value)
+    setSelectedChip(value)
   }
 
   return (
