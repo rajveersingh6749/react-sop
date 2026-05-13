@@ -39,7 +39,7 @@ const Roulette = () => {
         history={history}
         setHistory={setHistory}
       />
-      <Chips setSelectedChip={setSelectedChip} />
+      <Chips selectedChip={selectedChip} setSelectedChip={setSelectedChip} />
     </div>
   )
 }

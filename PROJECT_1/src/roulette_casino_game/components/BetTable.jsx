@@ -55,7 +55,7 @@ const BetTable = ({
   }
 
   const handleSpin = () => {
-    if (bets.length === 0) return
+    if (bets.length === 0 || roundFinished) return
 
     const randomNumber = Math.floor(Math.random() * 37)
 
@@ -68,6 +68,8 @@ const BetTable = ({
       (sum, bet) => sum + getPayoutForBet(bet),
       0,
     )
+
+    console.log('Color: ', color)
 
     setSpinResult(randomNumber)
     setColor(actualColor)
@@ -93,9 +95,13 @@ const BetTable = ({
     <div className='roulette_container'>
       <h2>Place Your Bets</h2>
       <div className='table_container'>
-        <div onClick={handleSpin} className='spin'>
+        <button
+          onClick={handleSpin}
+          className='spin'
+          disabled={roundFinished || bets.length === 0}
+        >
           Spin
-        </div>
+        </button>
 
         <div className='btn_container'>
           <button onClick={handleNewRound} className='restart'>

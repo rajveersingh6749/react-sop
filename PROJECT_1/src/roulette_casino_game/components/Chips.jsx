@@ -1,16 +1,26 @@
 import React from 'react'
 import '../styles/style.css'
 
-const Chips = ({ setSelectedChip }) => {
-  const getChipValue = (value) => {
-    console.log('Chips Value: ', value)
-    setSelectedChip(value)
-  }
+const Chips = ({ selectedChip, setSelectedChip }) => {
+  const chipValues = [1, 10, 100, 500]
+
+  // const getChipValue = (value) => {
+  //   setSelectedChip(value)
+  // }
 
   return (
     <div>
       <div className='chips'>
-        <div onClick={() => getChipValue(1)} className='chip'>
+        {chipValues.map((value) => (
+          <button
+            key={value}
+            onClick={() => setSelectedChip(value)}
+            className={`chip ${selectedChip === value ? 'active_chip' : ''}`}
+          >
+            ${value}
+          </button>
+        ))}
+        {/* <div onClick={() => getChipValue(1)} className='chip'>
           $1
         </div>
         <div onClick={() => getChipValue(10)} className='chip'>
@@ -21,7 +31,7 @@ const Chips = ({ setSelectedChip }) => {
         </div>
         <div onClick={() => getChipValue(500)} className='chip'>
           $500
-        </div>
+        </div> */}
       </div>
     </div>
   )

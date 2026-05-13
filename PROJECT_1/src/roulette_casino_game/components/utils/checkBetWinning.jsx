@@ -57,7 +57,7 @@ export const checkIfBetWon = (bet, spinResult) => {
 
     case 'column':
       if (spinResult === 0) return false
-      
+
       if (bet.value === '1ST') {
         return spinResult % 3 === 1
       }
@@ -65,7 +65,7 @@ export const checkIfBetWon = (bet, spinResult) => {
         return spinResult % 3 == 2
       }
       if (bet.value === '3RD') {
-        return spinResult === 0
+        return spinResult % 3 === 0
       }
 
       return false
