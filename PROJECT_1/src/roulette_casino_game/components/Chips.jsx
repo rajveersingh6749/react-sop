@@ -11,16 +11,16 @@ const Chips = ({ setSelectedChip }) => {
     <div>
       <div className='chips'>
         <div onClick={() => getChipValue(1)} className='chip'>
-          1
+          $1
         </div>
         <div onClick={() => getChipValue(10)} className='chip'>
-          10
+          $10
         </div>
         <div onClick={() => getChipValue(100)} className='chip'>
-          100
+          $100
         </div>
         <div onClick={() => getChipValue(500)} className='chip'>
-          500
+          $500
         </div>
       </div>
     </div>
