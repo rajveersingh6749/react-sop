@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import BetTable from './components/BetTable'
 import Chips from './components/Chips'
-import { isRed, checkIfBetWon } from './components/utils/checkBetWinning'
 import './styles/style.css'
 
 const Roulette = () => {
@@ -35,8 +34,6 @@ const Roulette = () => {
         setBets={setBets}
         bets={bets}
         placeBet={placeBet}
-        checkIfBetWon={checkIfBetWon}
-        isRed={isRed}
         balance={balance}
         setBalance={setBalance}
         history={history}

@@ -1,15 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
+import { isRed, checkIfBetWon } from './utils/checkBetWinning'
 import '../styles/style.css'
 
 const BetTable = ({
-  spinResult,
   setSpinResult,
   setSelectedChip,
   setBets,
   bets,
   placeBet,
-  checkIfBetWon,
-  isRed,
   balance,
   setBalance,
   history,
@@ -30,6 +28,7 @@ const BetTable = ({
     setSelectedChip(10)
     setColor('red')
     setRoundFinished(false)
+    setHistory([])
   }
 
   const handleNewRound = () => {
@@ -38,17 +37,6 @@ const BetTable = ({
     setColor('red')
     setRoundFinished(false)
   }
-
-  const getRandomNumberAndColor = () => {
-    const randomNumber = Math.floor(Math.random() * 37)
-    const actualColor =
-      randomNumber === 0 ? 'green' : isRed(randomNumber) ? 'red' : 'black'
-    setSpinResult(randomNumber)
-    setColor(actualColor)
-    setRoundFinished(true)
-  }
-
-  const winningBets = bets.filter((bet) => checkIfBetWon(bet, spinResult))
 
   const getPayoutForBet = (bet) => {
     switch (bet.type) {
@@ -66,19 +54,32 @@ const BetTable = ({
     }
   }
 
-  useEffect(() => {
-    if (spinResult === null || bets.length === 0) return
+  const handleSpin = () => {
+    if (bets.length === 0) return
+
+    const randomNumber = Math.floor(Math.random() * 37)
+
+    const actualColor =
+      randomNumber === 0 ? 'green' : isRed(randomNumber) ? 'red' : 'black'
+
+    const winningBets = bets.filter((bet) => checkIfBetWon(bet, randomNumber))
 
     const totalWinnings = winningBets.reduce(
       (sum, bet) => sum + getPayoutForBet(bet),
       0,
     )
 
+    setSpinResult(randomNumber)
+    setColor(actualColor)
+    setRoundFinished(true)
+
+    setBalance((prev) => prev + totalWinnings)
+
     setHistory((prev) =>
       [
         {
-          spinNumber: spinResult,
-          spinColor: color,
+          spinNumber: randomNumber,
+          spinColor: actualColor,
           winningBets,
           totalWinnings,
           didWin: winningBets.length > 0,
@@ -86,40 +87,13 @@ const BetTable = ({
         ...prev,
       ].slice(0, 10),
     )
-
-    setBalance((prev) => prev + totalWinnings)
-  }, [spinResult, bets])
+  }
 
   return (
     <div className='roulette_container'>
-      <div>
-        {spinResult !== null && (
-          <div>
-            <h3>Spin Number: {spinResult}</h3>
-            <h3>Spin Color: {color}</h3>
-
-            {spinResult !== null && bets.length === 0 ? (
-              <p>No bet placed</p>
-            ) : spinResult !== null ? (
-              winningBets.length > 0 ? (
-                <div>
-                  <p>You Won!</p>
-                  {winningBets.map((bet, index) => (
-                    <p key={index}>
-                      {bet.type} - {bet.value}
-                    </p>
-                  ))}
-                </div>
-              ) : (
-                <p>You Lost!</p>
-              )
-            ) : null}
-          </div>
-        )}
-      </div>
       <h2>Place Your Bets</h2>
       <div className='table_container'>
-        <div onClick={getRandomNumberAndColor} className='spin'>
+        <div onClick={handleSpin} className='spin'>
           Spin
         </div>
 

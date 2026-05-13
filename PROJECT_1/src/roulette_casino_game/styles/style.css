@@ -30,7 +30,6 @@ body {
   gap: 40px;
 }
 
-
 .clr_btn {
   width: 100px;
   height: 100px;
@@ -246,8 +245,12 @@ span {
   height: 300px;
 }
 
-.history_card {
-  margin-bottom: 10px;
-  /* overflow: auto; */
+.history_list {
+  margin-top: 10px;
 }
 
+.history_card {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
